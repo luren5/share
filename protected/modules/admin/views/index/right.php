@@ -1,3 +1,7 @@
 <?php
-    echo '这里是右边的主体内容部分';
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 ?>

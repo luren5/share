@@ -12,6 +12,13 @@ class AdminModule extends CWebModule
 			'admin.models.*',
 			'admin.components.*',
 		));
+        
+        Yii::app()->setComponents(array(
+            'user' => array(
+                'stateKeyPrefix' => 'admin',  //设置session的前缀
+                'loginUrl' => './index.php?r=admin/manager/login',  //设置后台登录页面
+            ) 
+        ));
 	}
 
 	public function beforeControllerAction($controller, $action)

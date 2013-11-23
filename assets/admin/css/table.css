@@ -1,0 +1,32 @@
+
+
+#senfe { 
+  width:1000px;
+  border-top:gray 1px solid; 
+  border-left: gray 1px solid;
+  font-family:"Microsoft Yahei","SimHei";
+  margin:0 auto; 
+} 
+#senfe th{
+  height:30px;
+  border-bottom: gray 1px solid;
+  border-right: gray 1px solid;
+  background: -moz-linear-gradient(top,#ffffff, #dcdcdc);
+  background: -o-linear-gradient(top,#ffffff  0%,#dcdcdc 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1,#dcdcdc));
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc', GradientType='0');   
+}
+
+.holder{
+  height:30px;
+  border:none;
+  text-align:center;
+  font-family:"Microsoft Yahei","SimHei"; 
+}
+
+#senfe td {
+  height:30px; 
+  border-right: gray 1px solid; 
+  border-bottom: gray 1px solid; 
+} 
+

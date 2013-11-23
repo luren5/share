@@ -1245,4 +1245,16 @@ class CController extends CBaseController
         return $errors;
     }
     
+    public function paging($total_records, $aim_page,$max_page_num = 12, $perpage = 8) {
+        $total_page = (ceil($total_records/$perpage) > $max_page_num ) ? $max_page_num : ceil($total_records/$perpage);   //$max_page_num 是当记录非常多时，最多显示多少页
+        if($aim_page > $total_page) {
+            $cur_page = $total_page;
+        } else if($aim_page < 1) {
+            $cur_page = 1;
+        } else {
+            $cur_page = $aim_page;
+        }
+        return array('cur_page' => $cur_page, 'total_page' => $total_page);
+    }
+    
 }

@@ -18,7 +18,7 @@
     </div><![endif]-->
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container"><a href="<?php echo $this->createUrl('index/index') ?>"  class="brand"> <img src="<?php echo IMG_URL?>logo_40.png"  class="logo">一起分享</a>
+        <div class="container"><a href="<?php echo $this->createUrl('index/index') ?>"  class="brand"> <img src="<?php echo IMG_URL?>logo_40.png"  class="logo">爱分享</a>
         <div class="action"><a href="<?php echo $this->createUrl('resource/index') ?>" >我要分享</a></div>
             <ul class="nav pull-right">
                 <?php if(!isset(Yii::app()->user->identity)) { ?>

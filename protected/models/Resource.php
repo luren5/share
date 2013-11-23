@@ -32,12 +32,12 @@ class Resource extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('title', 'required', 'message' => '标题不能为空'),
-            array('title', 'length', 'max' => 60, 'message'=> '标题长度不能大于20'),
+            array('title', 'length', 'max' => 20, 'message'=> '标题长度不能大于20'),
             array('description', 'required', 'message' => '资源描述不能为空'),
-            array('description','length', 'max'=>300,'message'=>'描述内容不能超过100字'),
-            array('remote_resource', 'length', 'max'=>150, 'message' => '外部链接长度太长'),
+            array('description','length', 'max'=>100,'message'=>'描述内容不能超过100字'),
+            array('remote_resource', 'length', 'max'=>120, 'message' => '外部链接长度太长'),
             array('remote_resource', 'match', 'pattern' => '/^(http:\/\/)?(https:\/\/)?([\w\d-]+\.)+[\w-]+(\/[\d\w-.\/?%&=]*)?$/', 'message' => '链接格式不正确'),
-            array('contributor', 'length', 'max'=>24),
+            array('contributor', 'length', 'max'=>12),
             array('tag_id', 'required', 'message' => '标签必选'),
             array('tag_id', 'numerical', 'integerOnly'=>true),
 			array('attachment', 'length', 'max'=>60),

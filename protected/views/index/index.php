@@ -1,4 +1,3 @@
-   
     <div class="container">
       <div class="row-fluid">
         <div class="span8">
@@ -8,7 +7,7 @@
           </div>
           <div class="block tag-nav">
             <div class="cell">
-              <div class="pull-right"><a href="write.htm" class="write btn btn-success btn-small">申请标签</a></div>
+              <div class="pull-right"><a href="<?php echo $this->createUrl('tag/apply') ?>" class="write btn btn-success btn-small">申请标签</a></div>
               <div class="wellcome">导航标签</div>
             </div>
             <div class="inner">
@@ -36,47 +35,33 @@
                 </div>
               <?php } ?>
           </div>
-          <div class="pagination-con">
-            <div class="pagination">
-              <ul>
-                <li class="disabled"><a href="#nogo">前一页</a></li>
-                    <?php for($i = $pagination_first; $i <= $pagination_last; $i++) { ?>
-                        <li <?php if($cur_page == $i) { ?> class='active' <?php }?>><a href="">
-                                 <?php echo $i;?>
-                            </a>
-                        </li>
-                    <?php } ?>
-                <li><a href="page/2.htm">下一页</a></li>
-              </ul>
-            </div>
-          </div>
+          
+        <?php $this->beginContent('//layouts/pagination',   //分页小物件
+            array('cur_page' =>$cur_page,
+                'total_page' => $total_page,
+                'link_argument' => isset($link_argument) ? $link_argument : array()
+            ));
+            $this->endContent(); 
+        ?>
+            
         </div>
         <div class="span4">
           <div class="well block noreply">
             <h4>站点公告</h4>
-            <p>人生已经如此的艰难，有些事情就不必拆穿！</p>
-            <p>人生已经如此的艰难，有些事情就不必拆穿！</p>
+            <?php foreach($announcements as $announcement) {?>
+            <li><?php echo $announcement->content;?></li>
+            <?php }?>
+            
           </div>
-          <div class="well block noreply">
-            <h4>站内搜索</h4>
-              这里加一个搜所框
-          </div>
+          <?php $this->beginContent('//layouts/search'); ?><?php $this->endContent(); ?>
             
           <div class="well block top-user"> 
-            <h4>等待分享</h4>
+            <h4>最新评论</h4>
             <ul>
-              <li><a href="post/525ac432a0401b4135000001.htm" >求一份实验报告 </a></li>
-            
+                <?php foreach($comments as $comment) { ?>
+                    <li><a href="<?php echo $this->createUrl('resource/single', array('rid' => $comment->resource_id)) ?>" ><?php echo mb_substr($comment->content, 0, 12, 'utf-8'); ?></a></li>
+                <?php } ?>
             </ul>
-          </div>
-            
-          <div class="well block top-user"> 
-            <h4>热门用户</h4>
-            <a href="/u/50139a6dc226e39609000018/profile">守候的寂寞 </a>
-            <a href="/u/5015775e3217bf571b000030/profile">yes </a>
-            <a href="/u/50159c383217bf571b00003a/profile">mario </a>
-
-
           </div>
         </div>
       </div>

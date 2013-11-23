@@ -21,35 +21,15 @@ class UserIdentity extends CUserIdentity
         $record=User::model()->findByAttributes(array('username'=>$this->username)); 
         if($record===null)  
             $this->errorCode=self::ERROR_USERNAME_INVALID;  
-        else if($record->password!== md5($this->password ))  
+        else if($record->password != md5($this->password ))  
             $this->errorCode=self::ERROR_PASSWORD_INVALID;  
         else  
         {  
-            $this->_id=$record->id;  
-            //$this->setState('title', $record->title);  
+            $this->_id=$record->id;   
             $this->errorCode=self::ERROR_NONE;  
+            $this->setState('identity', 'user');
         }  
-        return $this->errorCode;  
-        
-        
-        /*
-		$users=array(
-			// username => password
-			'demo'=>'demo',
-			'admin'=>'admin',
-		);
-        var_dump($this->username, $this->password); die();
-        
-        
-		if(!isset($users[$this->username]))
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		elseif($users[$this->username]!==$this->password)
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
-			$this->errorCode=self::ERROR_NONE;
-		return !$this->errorCode;
-         * 
-         */
+        return !$this->errorCode;  
 	}
     
     public function getId()  

@@ -31,8 +31,8 @@ class Comment extends CActiveRecord
             array('content', 'required', 'message' => '评论内容不能为空'),
 			array('resource_id, author, create_time', 'required'),
 			array('resource_id', 'numerical', 'integerOnly'=>true),
-			array('content', 'length', 'max'=>300, 'message' => '评论长度不能大于100字'),
-			array('author', 'length', 'max'=>24),
+			array('content', 'length', 'max'=>50, 'message' => '评论长度不能大于50字'),
+			array('author', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, content, resource_id, author, create_time', 'safe', 'on'=>'search'),

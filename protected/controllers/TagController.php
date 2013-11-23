@@ -2,9 +2,6 @@
 
 class TagController extends Controller
 {
-	/**
-	 * Declares class-based actions.
-	 */
     public $errors = array();
     
 	public function actions()
@@ -21,9 +18,6 @@ class TagController extends Controller
         $tag = Tags::model()->findByPk($_GET['tid']);
         $resource_num = Resource::model()->count("tag_id=:tag_id", array(':tag_id' => $_GET['tid']));
         $resources = Resource::model()->findAllByAttributes(array('tag_id' => $_GET['tid']));
-       
-        
-        
         $this->render('resource', array(
             'tag' => $tag,
             'resource_num' => $resource_num,
@@ -31,23 +25,28 @@ class TagController extends Controller
         )); 
         
     }
-
-    /**
-	 * This is the action to handle external exceptions.
-	 */
-    public function actionSingle() {
-        if(!isset($_GET['rid'])) {
-            $this->redirect(array('index/index'));
+    
+    public function actionApply() {
+        if(isset($_POST['name'])) {
+            if(isset(Yii::app()->user->identity)) {
+                $model = new Tags;
+                $model->name = $_POST['name'];
+                $model->status = '0';
+                $model->create_time = date('Y-m-d H:i:s');
+                $model->validate();
+                if(!$model->save()) {
+                    $this->errors = $this->assembleErrors($model ->getErrors());
+                }
+            } else {
+                array_push($this->errors, '请先登录');
+            }
         }
-        $resource = Resource::model()->findByPk($_GET['rid']);
-        $tag_name = Tags::model()->findByPk($resource->tag_id)->name;
-        
-        $this->render('single', array(
-                'resource'=> $resource,
-                'tag_name' => $tag_name,
-            )
-        );
+        $this->render('apply', array(
+            'errors' => $this->errors,
+        ));
     }
+    
+    
     
 	public function actionError()
 	{

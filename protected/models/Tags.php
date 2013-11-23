@@ -6,6 +6,7 @@
  * The followings are the available columns in table 'tags':
  * @property integer $id
  * @property string $name
+ * @property string $status
  * @property string $create_time
  */
 class Tags extends CActiveRecord
@@ -23,14 +24,10 @@ class Tags extends CActiveRecord
 	 */
 	public function rules()
 	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
 		return array(
-			array('name, create_time', 'required'),
-			array('name', 'length', 'max'=>15),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, name, create_time', 'safe', 'on'=>'search'),
+            array('name', 'required', 'message' => '标签名不能为空'),
+            array('name', 'length', 'max'=>12, 'message' => '标签长度不能超过12个字'),  
+			array('id, name, status, create_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -53,6 +50,7 @@ class Tags extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
+			'status' => 'Status',
 			'create_time' => 'Create Time',
 		);
 	}
@@ -77,6 +75,7 @@ class Tags extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('status',$this->status,true);
 		$criteria->compare('create_time',$this->create_time,true);
 
 		return new CActiveDataProvider($this, array(

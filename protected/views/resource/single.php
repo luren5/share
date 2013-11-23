@@ -1,4 +1,4 @@
-    <div class="container">
+<div class="container">
       <div class="row-fluid">
         <div class="span8">
           <div class="post-item">
@@ -18,17 +18,17 @@
                 <?php 
                     if($resource->attachment) {
                         if(isset(Yii::app()->user->identity)) {
-                            echo "<span><a href = ".$resource->attachment.">下载附件</a></span>";
+                            echo "<span><a href = ".ATT_DOWN_URL.$resource->attachment." title='附件'><img src = ".IMG_URL."download.png></a></span>";
                         } else {
-                            echo "<span>本资源附件登录后可见</span>";
+                            echo "<span><a href='#' title='附件登录后可见'><img src = ".IMG_URL."fujian.png></a></span>";
                         }
                         echo '&nbsp;&nbsp;&nbsp;&nbsp;';
                     }
                     if($resource->remote_resource) {
                         if(isset(Yii::app()->user->identity)) {
-                            echo "<span><a href = ".$resource->remote_resource."  target='_blank'>下载链接</a></span>";
+                            echo "<span><a href = ".$resource->remote_resource."  target='_blank' title='下载链接'><img src = ".IMG_URL."link.png></a></a></span>";
                         } else {
-                            echo "<span>资源下载链接登录后可见</span>";
+                            echo "<span><a href='#' title='下载链接登录后可见'><img src = ".IMG_URL."lianjie.png></a></span>";
                         }
                     }
                 ?>
@@ -45,6 +45,15 @@
           <div class="alert alert-info">
             <h4>对这个资源进行一下点评吧，会对后面的童鞋有帮助哦！</h4>
           </div>
+          <?php 
+                    if(!empty($errors)){
+                        foreach($errors as $value) {
+                ?>
+                            <div class="alert alert-error"><?php echo $value?></div>
+                <?php
+                        }
+                    }
+                ?>
           <section id="reply-list" class="reply-list">
               <?php  foreach($comments as $comment) {?>
                 <div class="reply-item clearfix">
@@ -60,18 +69,16 @@
                 </div>
               <?php } ?>
           </section>
-                <?php 
-                    if(!empty($errors)){
-                        foreach($errors as $value) {
-                ?>
-                            <div class="alert alert-error"><?php echo $value?></div>
-                <?php
-                        }
-                    }
-                ?>
+        <?php $this->beginContent('//layouts/pagination',   //分页小物件
+            array('cur_page' =>$cur_page,
+                'total_page' => $total_page,
+                'link_argument' => isset($link_argument) ? $link_argument : array()
+            ));
+            $this->endContent(); 
+        ?>
           <section class="content-reply">
             <form action="" method="post">
-              <textarea name="content" placeholder="登录后可评论，请不要超过100字"></textarea>
+              <textarea name="content" placeholder="登录后可评论，请不要超过50字"></textarea>
               <input type="submit" value="回复" class="btn btn-primary pull-right">
             </form>
           </section>

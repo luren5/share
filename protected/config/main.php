@@ -1,10 +1,4 @@
 <?php
-
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-
-// This is the main Web application configuration. Any writable
-// CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'分享',
@@ -30,8 +24,9 @@ return array(
         
         //后台管理模块创建成功后，一定要在这里引入才可以生效
        //后台默认的控制器是defalut
-        'admin',
-        'admin1'
+        'admin' => array(
+            'class' => 'application.modules.admin.AdminModule'
+        ),
     ),
     
 
@@ -40,6 +35,7 @@ return array(
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+            'loginUrl' => './index.php?r=user/login', //为前台设置默认的登录页面
 		),
 		// uncomment the following to enable URLs in path-format
 		/*
@@ -83,11 +79,11 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-		/*
+	/*
 				array(
 					'class'=>'CWebLogRoute', //这里可以帮我们记录相应的日志信息，包括运行的sql语句
 				),
-		*/
+	*/
 			),
 		),
 	),

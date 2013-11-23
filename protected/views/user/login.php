@@ -5,9 +5,9 @@
             <section class="offset2 block well">
                 <?php 
                     if(!empty($errors)){
-                        foreach($errors as $value) {
+                        foreach($errors as $error) {
                 ?>
-                            <div class="alert alert-error"><?php echo $value?></div>
+                            <div class="alert alert-error"><?php echo $error?></div>
                 <?php
                         }
                     }
