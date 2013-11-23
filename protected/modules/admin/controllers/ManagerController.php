@@ -61,6 +61,5 @@
             //Yii::app()->session->destroy();
             Yii::app()->user->logout();
             $this->redirect(array('manager/login'));
-            
         }
     }

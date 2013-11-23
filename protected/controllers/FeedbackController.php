@@ -25,7 +25,7 @@
                 if(!$model->save()) {
                     $this->errors = $this->assembleErrors($model ->getErrors());
                 } else {
-                    array_push($this->errors, '谢谢您宝贵的意见，我们会继续努力，做的更好！');
+                    array_push($this->errors, '已经收到您宝贵的意见，我们会继续努力，做的更好！');
                 }
             }
             $this->render('index', array('errors' => $this->errors));

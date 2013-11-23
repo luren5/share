@@ -12,7 +12,7 @@
             </div>
             <div class="inner">
                 <?php foreach($tags as $tag) { ?>
-                    <a href=""  class="tag-item"><?php echo $tag->name; ?></a>
+                    <a href="<?php echo $this->createUrl('resource/bytag', array('tid' => $tag->id)) ?>" target="_blank" class="tag-item"><?php echo $tag->name; ?></a>
                 <?php } ?>
             </div>
           </div>
@@ -29,7 +29,7 @@
                 <div class="post-list-body">
                     <div class="post-list-title"> <a href="<?php echo $this->createUrl('resource/single', array('rid' => $resource->id)) ?>"  target="_blank"><?php echo $resource->title?></a>
                     </div>
-                    <div class="post-list-footer"><span><?php echo $resource->contributor?>•分享于</span><span class="time"><?php echo $resource->create_time?>• </span>
+                    <div class="post-list-footer"><span><?php echo $resource->contributor?>•分享于</span><span class="time"><?php echo $resource->create_time; ?></span>
                     </div>
                 </div>
                 </div>
@@ -53,6 +53,7 @@
             <?php }?>
             
           </div>
+            <?php $this->beginContent('//layouts/contactUs'); ?><?php $this->endContent(); ?>
           <?php $this->beginContent('//layouts/search'); ?><?php $this->endContent(); ?>
             
           <div class="well block top-user"> 

@@ -35,7 +35,7 @@
                 
               </div>
             </div>
-            <div class="post-item-footer"><span class="tags pull-right">所属分类•<a href=""><?php echo $tag_name;?></a></span>
+            <div class="post-item-footer"><span class="tags pull-right">所属分类 • <a href=""><?php echo $tag_name;?></a></span>
               <div class="share_buttons">
                 <div id="bdshare" class="bdshare_yidian bdshare_t bds_tools get-codes-bdshare"><a class="bds_qzone"></a><a class="bds_tsina"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more"></span><a class="shareCount"></a></div>
               </div>
@@ -84,15 +84,9 @@
           </section>
         </div>
         <div class="span4">
-            <?php $this->beginContent('//layouts/search'); ?><?php $this->endContent(); ?>
           <?php $this->beginContent('//layouts/contactUs'); ?><?php $this->endContent(); ?>
-          <?php $this->beginContent('//layouts/followUs_weixin'); ?><?php $this->endContent(); ?>
             <?php $this->beginContent('//layouts/followUs_weibo'); ?><?php $this->endContent(); ?>
-          
-            
-            
-            
-
+          <?php $this->beginContent('//layouts/followUs_weixin'); ?><?php $this->endContent(); ?>
         </div>
       </div>
     </div>

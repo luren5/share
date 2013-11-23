@@ -29,4 +29,6 @@
   border-right: gray 1px solid; 
   border-bottom: gray 1px solid; 
 } 
-
+#senfe input{
+    width: 90px;
+}

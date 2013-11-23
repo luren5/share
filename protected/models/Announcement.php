@@ -27,9 +27,9 @@ class Announcement extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('content, publisher, create_time', 'required'),
-			array('content', 'length', 'max'=>450),
-			array('publisher', 'length', 'max'=>20),
+			array('content, publisher, create_time', 'required', 'message' => '内容不能为空'),
+			array('content', 'length', 'max'=>100),
+			array('publisher', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, content, publisher, create_time', 'safe', 'on'=>'search'),

@@ -147,6 +147,32 @@
 
         }
 
+        public function actionBytag() {
+            if(!isset($_GET['tid'])) {
+                $this->redirect(array('index/index'));
+            }
+            
+            $total_records = Resource::model()->count('tag_id=:tag_id', array('tag_id' => $_GET['tid']));
+            if(!isset($_GET['page'])) {
+                $_GET['page'] = 1;
+            }
+            $page_info = $this->paging($total_records, $_GET['page'], 0, 10);
+            $total_page = $page_info['total_page'];
+            $cur_page = $page_info['cur_page'];
+            $resources = Resource::model()->findAll('tag_id=:tag_id', array(':tag_id' => $_GET['tid']),array('order' => 'create_time desc', 'limit' => 18, 'offset' => ($cur_page - 1)*18 ));
+            
+            $tag_name = Tags::model()->findByPk($_GET['tid'])->name;
+            $this->render('bytag', array(
+                'resources' => $resources,
+                'tag_name' => $tag_name,
+                'total_page' => $total_page,
+                'cur_page' => $cur_page,
+                'total_records' => $total_records,
+               'link_argument' => array('tid' => $_GET['tid']),
+            ));
+            
+            
+        }
 
         public function actionError()
         {

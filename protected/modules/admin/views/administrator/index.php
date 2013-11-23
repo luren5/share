@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>table2</title>
-  <link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>table.css" type="text/css">
-</head>
-
-<body>
 <table border="0" cellpadding="0" cellspacing="0" id="senfe">
   <tr>
     <th>编号</th>
@@ -42,6 +33,3 @@
         </tr>
     <?php } ?>
 </table>
-
-</body>
-</html>

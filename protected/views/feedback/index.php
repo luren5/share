@@ -5,9 +5,8 @@
             <div class="well block">
                 <h3>联系我们</h3>
               <p>可以通过以下方式联系我们</p>
-              <p>邮箱：yidianmimi.com#gmail.com （把#换成@）</p>
-              <p>QQ ：2482846577</p>
-              <p>weibo ：<a href="" target="_blank">@一点秘密</a></p>
+              <p>邮箱：xhuan@hgdonline.net</p>
+              <p>微博 ：<a href="http://weibo.com/u/3915153185" target="_blank">@爱分享-正能量</a></p>
             </div>
             
             <div class="well block">

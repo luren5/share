@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>table2</title>
-  <link rel="stylesheet" href="<?php echo ADMIN_CSS_URL ?>table.css" type="text/css">
-</head>
-
-<body>
 <table border="0" cellpadding="0" cellspacing="0" id="senfe">
   <tr>
     <th>编号</th>
@@ -33,12 +24,16 @@
             <td class="t">
                 <?php echo $tag->create_time;?>
             </td>
-            <td><button type="submit" style="background-image: url('<?php echo ADMIN_IMG_URL;?>change.png')"></button></td>
+            <td><button type="submit"><img src="<?php echo ADMIN_IMG_URL;?>change.png"/></button></td>
             <td><a href="<?php echo $this->createUrl('tag/delete', array('id' => $tag->id))?>"><img src="<?php echo ADMIN_IMG_URL;?>delete.png"></a></td>
         </tr>
     </form>
     <?php } ?>
 </table>
-
-</body>
-</html>
+    <?php $this->beginContent('//layouts/pagination',   //分页小物件
+        array('cur_page' =>$cur_page,
+            'total_page' => $total_page,
+            'link_argument' => isset($link_argument) ? $link_argument : array(),
+        ));
+        $this->endContent(); 
+    ?>

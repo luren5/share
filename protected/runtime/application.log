@@ -5753,3 +5753,237 @@ Stack trace:
 REQUEST_URI=/share/index.php?r=admin/user/update
 in D:\WWW\share\protected\modules\admin\controllers\UserController.php (36)
 in D:\WWW\share\index.php (9)
+2013/11/23 14:34:55 [error] [php] include(IndexController.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\WWW\share\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\WWW\share\protected\modules\admin\controllers\ManagerController.php(63): spl_autoload_call()
+#1 D:\WWW\share\framework\web\actions\CInlineAction.php(49): ManagerController->actionLogout()
+#2 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 D:\WWW\share\framework\web\filters\CFilterChain.php(133): ManagerController->runAction()
+#4 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): ManagerController->filterAccessControl()
+#7 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\WWW\share\framework\web\CController.php(265): ManagerController->runActionWithFilters()
+#10 D:\WWW\share\framework\web\CWebApplication.php(282): ManagerController->run()
+#11 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/manager/logout
+in D:\WWW\share\protected\modules\admin\controllers\ManagerController.php (63)
+in D:\WWW\share\index.php (9)
+2013/11/23 19:47:17 [error] [php] Trying to get property of non-object (D:\WWW\share\protected\controllers\ResourceController.php:87)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(286): ResourceController->runAction()
+#1 D:\WWW\share\framework\web\CController.php(265): ResourceController->runActionWithFilters()
+#2 D:\WWW\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=2
+in D:\WWW\share\protected\controllers\ResourceController.php (87)
+in D:\WWW\share\index.php (9)
+2013/11/23 20:31:05 [error] [php] Undefined variable: cur_page (D:\WWW\share\protected\modules\admin\views\announcement\index.php:33)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(869): AnnouncementController->renderFile()
+#1 D:\WWW\share\framework\web\CController.php(782): AnnouncementController->renderPartial()
+#2 D:\WWW\share\protected\modules\admin\controllers\AnnouncementController.php(33): AnnouncementController->render()
+#3 D:\WWW\share\framework\web\actions\CInlineAction.php(49): AnnouncementController->actionIndex()
+#4 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\WWW\share\framework\web\filters\CFilterChain.php(133): AnnouncementController->runAction()
+#6 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): AnnouncementController->filterAccessControl()
+#9 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\WWW\share\framework\web\CController.php(265): AnnouncementController->runActionWithFilters()
+#12 D:\WWW\share\framework\web\CWebApplication.php(282): AnnouncementController->run()
+#13 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/announcement/index
+in D:\WWW\share\protected\modules\admin\views\announcement\index.php (33)
+in D:\WWW\share\protected\modules\admin\controllers\AnnouncementController.php (33)
+in D:\WWW\share\index.php (9)
+2013/11/23 20:33:46 [error] [php] Undefined index: page (D:\WWW\share\protected\modules\admin\controllers\AnnouncementController.php:32)
+Stack trace:
+#0 D:\WWW\share\framework\web\filters\CFilterChain.php(133): AnnouncementController->runAction()
+#1 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): AnnouncementController->filterAccessControl()
+#4 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\WWW\share\framework\web\CController.php(265): AnnouncementController->runActionWithFilters()
+#7 D:\WWW\share\framework\web\CWebApplication.php(282): AnnouncementController->run()
+#8 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/announcement/index
+in D:\WWW\share\protected\modules\admin\controllers\AnnouncementController.php (32)
+in D:\WWW\share\index.php (9)
+2013/11/23 20:51:37 [error] [php] Undefined variable: cur_page (D:\WWW\share\protected\modules\admin\views\tag\index.php:34)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(869): TagController->renderFile()
+#1 D:\WWW\share\framework\web\CController.php(782): TagController->renderPartial()
+#2 D:\WWW\share\protected\modules\admin\controllers\TagController.php(38): TagController->render()
+#3 D:\WWW\share\framework\web\actions\CInlineAction.php(49): TagController->actionIndex()
+#4 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\WWW\share\framework\web\filters\CFilterChain.php(133): TagController->runAction()
+#6 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): TagController->filterAccessControl()
+#9 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\WWW\share\framework\web\CController.php(265): TagController->runActionWithFilters()
+#12 D:\WWW\share\framework\web\CWebApplication.php(282): TagController->run()
+#13 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/tag/index
+in D:\WWW\share\protected\modules\admin\views\tag\index.php (34)
+in D:\WWW\share\protected\modules\admin\controllers\TagController.php (38)
+in D:\WWW\share\index.php (9)
+2013/11/23 20:53:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('update')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('update')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/tag/updat...')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=admin/tag/update
+HTTP_REFERER=http://localhost/share/index.php?r=admin/tag/index
+---
+2013/11/23 20:55:33 [error] [php] Undefined variable: cur_page (D:\WWW\share\protected\modules\admin\views\resource\index.php:50)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(869): ResourceController->renderFile()
+#1 D:\WWW\share\protected\modules\admin\controllers\resourceController.php(32): ResourceController->renderPartial()
+#2 D:\WWW\share\framework\web\actions\CInlineAction.php(49): ResourceController->actionIndex()
+#3 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\WWW\share\framework\web\filters\CFilterChain.php(133): ResourceController->runAction()
+#5 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): ResourceController->filterAccessControl()
+#8 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\WWW\share\framework\web\CController.php(265): ResourceController->runActionWithFilters()
+#11 D:\WWW\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#12 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/resource/index
+in D:\WWW\share\protected\modules\admin\views\resource\index.php (50)
+in D:\WWW\share\protected\modules\admin\controllers\resourceController.php (32)
+in D:\WWW\share\index.php (9)
+2013/11/23 21:13:30 [error] [exception.CException] exception 'CException' with message 'TagController cannot find the requested view "add".' in D:\WWW\share\framework\web\CController.php:878
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(782): CController->renderPartial('add', Array, true)
+#1 D:\WWW\share\protected\modules\admin\controllers\TagController.php(46): CController->render('add', Array)
+#2 D:\WWW\share\framework\web\actions\CInlineAction.php(49): TagController->actionAdd()
+#3 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\WWW\share\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\WWW\share\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\WWW\share\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('add')
+#12 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/tag/add')
+#13 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\WWW\share\index.php(9): CApplication->run()
+#15 {main}
+REQUEST_URI=/share/index.php?r=admin/tag/add
+HTTP_REFERER=http://localhost/share/index.php?r=admin/index/left
+---
+2013/11/23 21:14:21 [error] [exception.CException] exception 'CException' with message 'TagController cannot find the requested view "add".' in D:\WWW\share\framework\web\CController.php:878
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(782): CController->renderPartial('add', Array, true)
+#1 D:\WWW\share\protected\modules\admin\controllers\TagController.php(46): CController->render('add', Array)
+#2 D:\WWW\share\framework\web\actions\CInlineAction.php(49): TagController->actionAdd()
+#3 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\WWW\share\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\WWW\share\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\WWW\share\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('add')
+#12 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/tag/add')
+#13 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\WWW\share\index.php(9): CApplication->run()
+#15 {main}
+REQUEST_URI=/share/index.php?r=admin/tag/add
+HTTP_REFERER=http://localhost/share/index.php?r=admin/index/left
+---
+2013/11/23 21:18:03 [error] [php] Undefined variable: model (D:\WWW\share\protected\modules\admin\controllers\TagController.php:47)
+Stack trace:
+#0 D:\WWW\share\framework\web\filters\CFilterChain.php(133): TagController->runAction()
+#1 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): TagController->filterAccessControl()
+#4 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\WWW\share\framework\web\CController.php(265): TagController->runActionWithFilters()
+#7 D:\WWW\share\framework\web\CWebApplication.php(282): TagController->run()
+#8 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/tag/add
+in D:\WWW\share\protected\modules\admin\controllers\TagController.php (47)
+in D:\WWW\share\index.php (9)
+2013/11/23 21:19:05 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[HY000]: General error: 1364 Field 'status' doesn't have a default value. The SQL statement executed was: INSERT INTO `tags` (`name`) VALUES (:yp0). Bound with :yp0='fdafdsa'.
+in D:\WWW\share\protected\modules\admin\controllers\TagController.php (48)
+in D:\WWW\share\index.php (9)
+2013/11/23 21:19:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[HY000]: General error: 1364 Field 'status' doesn't have a default value. The SQL statement executed was: INSERT INTO `tags` (`name`) VALUES (:yp0). Bound with :yp0='fdafdsa'' in D:\WWW\share\framework\db\CDbCommand.php:358
+Stack trace:
+#0 D:\WWW\share\framework\db\ar\CActiveRecord.php(1077): CDbCommand->execute()
+#1 D:\WWW\share\framework\db\ar\CActiveRecord.php(806): CActiveRecord->insert(NULL)
+#2 D:\WWW\share\protected\modules\admin\controllers\TagController.php(48): CActiveRecord->save()
+#3 D:\WWW\share\framework\web\actions\CInlineAction.php(49): TagController->actionAdd()
+#4 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\WWW\share\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\WWW\share\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\WWW\share\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('add')
+#13 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/tag/add')
+#14 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\WWW\share\index.php(9): CApplication->run()
+#16 {main}
+REQUEST_URI=/share/index.php?r=admin/tag/add
+HTTP_REFERER=http://localhost/share/index.php?r=admin/tag/add
+---
+2013/11/23 21:22:02 [error] [php] include(Tag.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (D:\WWW\share\framework\YiiBase.php:427)
+Stack trace:
+#0 D:\WWW\share\protected\modules\admin\controllers\TagController.php(63): spl_autoload_call()
+#1 D:\WWW\share\framework\web\actions\CInlineAction.php(49): TagController->actionDelete()
+#2 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 D:\WWW\share\framework\web\filters\CFilterChain.php(133): TagController->runAction()
+#4 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#5 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#6 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): TagController->filterAccessControl()
+#7 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#8 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#9 D:\WWW\share\framework\web\CController.php(265): TagController->runActionWithFilters()
+#10 D:\WWW\share\framework\web\CWebApplication.php(282): TagController->run()
+#11 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/tag/delete&id=2
+in D:\WWW\share\protected\modules\admin\controllers\TagController.php (63)
+in D:\WWW\share\index.php (9)
+2013/11/23 21:48:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('index')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('index')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('tag/index')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=tag/index
+---

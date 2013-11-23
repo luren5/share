@@ -96,5 +96,5 @@ return array(
 	),
    
     'defaultController' => 'index',
-    'layout'=>'main',
+    'layout'=>'share',
 );
