@@ -2,8 +2,8 @@
       <div class="row-fluid">
         <div class="span8">
           <div class="well block">
-            <h3>这是湖工大的分享网站</h3>
-            <h4> <span class="count"><?php echo $user_num?>+</span>同鞋分享了<span class="count"><?php echo $resource_num;?>+</span>个资源</h4>
+            <h3>爱湖工、爱生活、爱分享</h3>
+            <h4> 这里已经有<span class="count"><?php echo $user_num?>+</span>位同鞋分享了<span class="count"><?php echo $resource_num;?>+</span>个资源</h4>
           </div>
           <div class="block tag-nav">
             <div class="cell">
@@ -53,8 +53,9 @@
             <?php }?>
             
           </div>
-            <?php $this->beginContent('//layouts/contactUs'); ?><?php $this->endContent(); ?>
+            
           <?php $this->beginContent('//layouts/search'); ?><?php $this->endContent(); ?>
+            <?php $this->beginContent('//layouts/contactUs'); ?><?php $this->endContent(); ?>
             
           <div class="well block top-user"> 
             <h4>最新评论</h4>

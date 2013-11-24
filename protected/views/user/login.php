@@ -27,7 +27,8 @@
                   </div>
                 </div>
                 <div class="form-actions">
-                  <input type="submit" value="登录" class="btn btn-primary"><a href="reg.htm">没有帐号？点击这里注册</a>
+                  <input type="submit" value="登录" class="btn btn-primary">
+                  <a href="<?php echo $this->createUrl('user/register') ?>">没有帐号？点击这里注册</a>
                 </div
                 </form> 
             </section>

@@ -17,6 +17,7 @@ class Administrator extends CActiveRecord
 	/**
 	 * @return string the associated database table name
 	 */
+    
 	public function tableName()
 	{
 		return 'administrator';

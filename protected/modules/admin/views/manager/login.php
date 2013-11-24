@@ -31,7 +31,7 @@
         <label>密   码</label>
         <input class="text-input" type="password" name="admin[password]"/>
       </p>
-      <div class="clear"></div>
+<div class="clear"></div>
       <p>
         <input class="button" type="submit" value="登录" name="submit"/>
       </p>
@@ -40,5 +40,10 @@
   <!-- End #login-content -->
 </div>
 <!-- End #login-wrapper -->
+<script>
+    function refreshVcode() {
+        document.getElementById('vcode').setAttribute("src","http://localhost/share/index.php?r=user/captcha"+Math.random());
+    }
+</script>
 </body>
 </html>

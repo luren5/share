@@ -1,6 +1,6 @@
 <?php
     class ManagerController extends Controller{
-        
+     
         function filters() {
             return array(
                 'accessControl',

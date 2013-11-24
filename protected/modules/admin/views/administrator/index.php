@@ -29,7 +29,11 @@
             <td class="s">
                 <?php echo $administrator->create_time;?>
             </td>
-            <td><a href="<?php echo $this->createUrl('administrator/delete', array('id' => $administrator->id))?>"><img src="<?php echo ADMIN_IMG_URL;?>delete.png"></a></td>
+            <td>
+                <a title="删除操作仅超级管理员可执行" href="<?php echo $this->createUrl('administrator/delete', array('id' => $administrator->id))?>">
+                    <img src="<?php echo ADMIN_IMG_URL;?>delete.png">
+                </a>
+            </td>
         </tr>
     <?php } ?>
 </table>

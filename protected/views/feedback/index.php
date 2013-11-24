@@ -7,6 +7,7 @@
               <p>可以通过以下方式联系我们</p>
               <p>邮箱：xhuan@hgdonline.net</p>
               <p>微博 ：<a href="http://weibo.com/u/3915153185" target="_blank">@爱分享-正能量</a></p>
+              <p>微信号 ：hgdonline</p>
             </div>
             
             <div class="well block">

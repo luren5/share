@@ -13,7 +13,7 @@
                     }
                 ?>
               <form action="" method="POST" class="form-horizontal" enctype="multipart/form-data">
-                <legend>分享我的资源</legend>
+                <legend><h3>分享我的资源<span class="count" style="font-size: 16px;">(请在登录状态下分享)</span></h3></legend>
                 <div class="control-group">
                   <label class="control-label"><span style="color:red">*</span>标题</label>
                   <div class="controls">
@@ -30,7 +30,7 @@
                   <label class="control-label">附件</label>
                   <div class="controls">
                     <?php echo CHtml::activeFileField($model, 'attachment'); ?>
-                    <p class="help-block muted">附件和外部链接至少选其一，文件大小不能超过2M，格式只能是jpg、gif、jepg、bmp、wps、zip格式之一</p>
+                    <p class="help-block muted">附件和外部链接至少选其一，文件大小不能超过2M，格式只能是jpg、gif、jepg、bmp、doc、xls、wps、zip、txt、et、png之一,多个文件请先打包压缩后再上传！</p>
                   </div>
                 </div>
                 <div class="control-group">
@@ -48,6 +48,12 @@
                             <option value =<?php echo $tag->id ?>><?php echo $tag->name ?></option>
                           <?php } ?>
                     </select>
+                      </br>
+                      <span>
+                          如果没有找到您想要的分类，
+                          <a href="<?php echo $this->createUrl('tag/apply') ?>" target="_blank">点击这里</a>
+                          申请新标签,我们会尽快处理！
+                      </span>
                   </div>
                 </div>
                 <div class="form-actions">

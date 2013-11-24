@@ -2,8 +2,6 @@
 
 class TagController extends Controller
 {
-    public $errors = array();
-    
 	public function actions()
 	{
 		return array(
@@ -31,11 +29,13 @@ class TagController extends Controller
             if(isset(Yii::app()->user->identity)) {
                 $model = new Tags;
                 $model->name = $_POST['name'];
-                $model->status = '0';
+                $model->status = 0;
                 $model->create_time = date('Y-m-d H:i:s');
                 $model->validate();
                 if(!$model->save()) {
                     $this->errors = $this->assembleErrors($model ->getErrors());
+                } else {
+                    array_push($this->errors, '申请成功，等待管理员申核');
                 }
             } else {
                 array_push($this->errors, '请先登录');

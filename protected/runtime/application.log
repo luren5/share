@@ -5987,3 +5987,187 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/share/index.php?r=tag/index
 ---
+2013/11/24 10:21:15 [error] [exception.CException] exception 'CException' with message 'AdministratorController and its behaviors do not have a method or closure named "rander".' in D:\WWW\share\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php(50): CComponent->__call('rander', Array)
+#1 D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php(50): AdministratorController->rander(Array)
+#2 D:\WWW\share\framework\web\actions\CInlineAction.php(49): AdministratorController->actionAdd()
+#3 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\WWW\share\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\WWW\share\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\WWW\share\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('add')
+#12 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/administr...')
+#13 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\WWW\share\index.php(9): CApplication->run()
+#15 {main}
+REQUEST_URI=/share/index.php?r=admin/administrator/add
+HTTP_REFERER=http://localhost/share/index.php?r=admin/index/left
+---
+2013/11/24 10:21:34 [error] [php] strpos() expects parameter 1 to be string, array given (D:\WWW\share\framework\web\CController.php:706)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(867): AdministratorController->getViewFile()
+#1 D:\WWW\share\framework\web\CController.php(782): AdministratorController->renderPartial()
+#2 D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php(50): AdministratorController->render()
+#3 D:\WWW\share\framework\web\actions\CInlineAction.php(49): AdministratorController->actionAdd()
+#4 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\WWW\share\framework\web\filters\CFilterChain.php(133): AdministratorController->runAction()
+#6 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): AdministratorController->filterAccessControl()
+#9 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\WWW\share\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 D:\WWW\share\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/administrator/add
+in D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php (50)
+in D:\WWW\share\index.php (9)
+2013/11/24 10:21:35 [error] [php] strpos() expects parameter 1 to be string, array given (D:\WWW\share\framework\web\CController.php:706)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(867): AdministratorController->getViewFile()
+#1 D:\WWW\share\framework\web\CController.php(782): AdministratorController->renderPartial()
+#2 D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php(50): AdministratorController->render()
+#3 D:\WWW\share\framework\web\actions\CInlineAction.php(49): AdministratorController->actionAdd()
+#4 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\WWW\share\framework\web\filters\CFilterChain.php(133): AdministratorController->runAction()
+#6 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): AdministratorController->filterAccessControl()
+#9 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\WWW\share\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 D:\WWW\share\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/administrator/add
+in D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php (50)
+in D:\WWW\share\index.php (9)
+2013/11/24 10:21:36 [error] [php] strpos() expects parameter 1 to be string, array given (D:\WWW\share\framework\web\CController.php:706)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(867): AdministratorController->getViewFile()
+#1 D:\WWW\share\framework\web\CController.php(782): AdministratorController->renderPartial()
+#2 D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php(50): AdministratorController->render()
+#3 D:\WWW\share\framework\web\actions\CInlineAction.php(49): AdministratorController->actionAdd()
+#4 D:\WWW\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\WWW\share\framework\web\filters\CFilterChain.php(133): AdministratorController->runAction()
+#6 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): AdministratorController->filterAccessControl()
+#9 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\WWW\share\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 D:\WWW\share\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/administrator/add
+in D:\WWW\share\protected\modules\admin\controllers\AdministratorController.php (50)
+in D:\WWW\share\index.php (9)
+2013/11/24 11:22:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captc".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('captc')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('captc')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captc')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=user/captc
+---
+2013/11/24 11:22:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "captc".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('captc')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('captc')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('user/captc')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=user/captc
+---
+2013/11/24 13:55:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('update')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('update')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/tag/updat...')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=admin/tag/update
+HTTP_REFERER=http://localhost/share/index.php?r=admin/tag/index
+---
+2013/11/24 13:57:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "update".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('update')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('update')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('admin/tag/updat...')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=admin/tag/update
+HTTP_REFERER=http://localhost/share/index.php?r=admin/tag/index
+---
+2013/11/24 14:02:11 [error] [php] Undefined index: id (D:\WWW\share\protected\modules\admin\controllers\TagController.php:70)
+Stack trace:
+#0 D:\WWW\share\framework\web\filters\CFilterChain.php(133): TagController->runAction()
+#1 D:\WWW\share\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#2 D:\WWW\share\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#3 D:\WWW\share\framework\web\filters\CInlineFilter.php(58): TagController->filterAccessControl()
+#4 D:\WWW\share\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#5 D:\WWW\share\framework\web\CController.php(291): CFilterChain->run()
+#6 D:\WWW\share\framework\web\CController.php(265): TagController->runActionWithFilters()
+#7 D:\WWW\share\framework\web\CWebApplication.php(282): TagController->run()
+#8 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=admin/tag/update
+in D:\WWW\share\protected\modules\admin\controllers\TagController.php (70)
+in D:\WWW\share\index.php (9)
+2013/11/24 14:16:22 [error] [php] Undefined variable: tags (D:\WWW\share\protected\controllers\ResourceController.php:10)
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(286): ResourceController->runAction()
+#1 D:\WWW\share\framework\web\CController.php(265): ResourceController->runActionWithFilters()
+#2 D:\WWW\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\WWW\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/index
+in D:\WWW\share\protected\controllers\ResourceController.php (10)
+in D:\WWW\share\index.php (9)
+2013/11/24 16:49:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('index')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('index')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('tag/index')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=tag/index
+HTTP_REFERER=http://localhost/share/index.php?r=resource
+---
+2013/11/24 16:49:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('index')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('index')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('tag/index')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=tag/index
+---
+2013/11/24 16:49:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in D:\WWW\share\framework\web\CController.php:483
+Stack trace:
+#0 D:\WWW\share\framework\web\CController.php(270): CController->missingAction('index')
+#1 D:\WWW\share\framework\web\CWebApplication.php(282): CController->run('index')
+#2 D:\WWW\share\framework\web\CWebApplication.php(141): CWebApplication->runController('tag/index')
+#3 D:\WWW\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\WWW\share\index.php(9): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=tag/index
+---

@@ -64,4 +64,11 @@
             }  
             $this->redirect(array('tag/index'));
         }
+        
+        public function actionUpdate() {
+            if(isset($_POST['tag'])) {
+                Tags::model()->updateByPk($_POST['tag']['id'], array('status' => $_POST['tag']['status'], 'name' =>$_POST['tag']['name']));
+            } 
+            $this->redirect(array('tag/index'));
+        }
     }

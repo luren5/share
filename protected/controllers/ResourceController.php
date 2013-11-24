@@ -5,9 +5,15 @@
         public function actionIndex()
         {
             $model = new Resource;
-            $tags = Tags::model()->findAll();
-
+            $tags = Tags::model()->findAll('status=:status', array('status' => 1));
+            
             if(isset($_POST['Resource'])) {
+                if(!isset(Yii::app()->user->identity)) {
+                    array_push($this->errors, '请在登录状态下分享');
+                    $this->render('index', array('tags' => $tags, 'model'=>$model, 'errors' => $this->errors));
+                    return;
+                }
+                
                 if($_FILES['Resource']['error']['attachment'] === 4 && empty($_POST['Resource']['remote_resource'])) {
                     array_push($this->errors, '附件和外部链接必须至少要填一项');
                 } 
@@ -19,18 +25,9 @@
                     if($attachment->getSize() > 1024*1024*2) {
                         array_push($this->errors, '文件大小不能超过2M');
                     }
-                    $allow_type = array(
-                        'image/jpeg',
-                        'image/jpg',
-                        'image/png', 
-                        'image/gif',
-                        'image/bmp',
-                        'application/kswps',
-                        'application/octet-stream'
-                        );
-                    echo $attachment->getType(); die();
-                    
-                    if(!in_array($attachment->getType(), $allow_type)) {
+                    $allow_type = array('jpg', 'jepg', 'bmp', 'gif', 'zip', 'png', 'doc', 'wps', 'xls', 'et', 'txt');
+                   
+                    if(!in_array($attachment->getExtensionName(), $allow_type)) {
                         array_push($this->errors, '文件类型不允许');
                     }
 
@@ -38,12 +35,15 @@
                         if(!file_exists(ATT_URL.date('Ym'))) {
                             mkdir(ATT_URL.date('Ym'), true);
                         }
-                        $_POST['Resource']['attachment'] = date('Ym').'/'.time().'.'.$attachment->getExtensionName();
+                        if(!file_exists(ATT_URL.date('Ym').'/index.php')) {
+                            file_put_contents(ATT_URL.date('Ym').'/index.php', '<?php header("Location: http://share.hgdonline.net");');
+                        }
+                        $_POST['Resource']['attachment'] = date('Ym').'/'.md5(time()).'.'.$attachment->getExtensionName();
                     } 
                 }
 
                 $model->attributes=$_POST['Resource'];
-                $model->contributor = '徐欢欢';   //这里为什么不能放到beforeSave里面去
+                $model->contributor = Yii::app()->user->name;
                 $model->create_time = date('Y-m-d H:i:s');
 
                 $model->validate();

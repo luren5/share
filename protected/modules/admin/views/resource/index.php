@@ -14,7 +14,7 @@
   </tr>
     
      <?php foreach($resources as $resource) {?>
-    <form action="<?php echo $this->createUrl('user/update')?>" method="post">
+    <form action="<?php echo $this->createUrl('resource/update')?>" method="post">
         <tr>
             <td class="f">
                 <?php echo $resource->id;?>
@@ -41,7 +41,7 @@
                 <?php echo $resource->create_time;?>
             </td>
             <td><button type="submit"><img src="<?php echo ADMIN_IMG_URL;?>change.png"/></button></td>
-            <td><a href="<?php echo $this->createUrl('user/delete', array('id' => $resource->id))?>"><img src="<?php echo ADMIN_IMG_URL;?>delete.png"></a></td>
+            <td><a href="<?php echo $this->createUrl('resource/delete', array('id' => $resource->id))?>"><img src="<?php echo ADMIN_IMG_URL;?>delete.png"></a></td>
         </tr>
     </form>
     <?php } ?>

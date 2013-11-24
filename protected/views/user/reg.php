@@ -55,7 +55,7 @@
                   </div>
                 </div>
                 <div class="form-actions">
-                  <input type="submit" value="注册" class="btn btn-primary"><a href="login.htm" > 已经有账号?点击这里登录</a>
+                  <input type="submit" value="注册" class="btn btn-primary"><a href="<?php echo $this->createUrl('user/register') ?>" > 已经有账号?点击这里登录</a>
                 </div>
               </form>
             </section>

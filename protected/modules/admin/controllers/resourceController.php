@@ -1,5 +1,4 @@
 <?php
-
 class ResourceController extends Controller
 {
     public $layout='/layouts/share_admin';

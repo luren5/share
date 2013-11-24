@@ -13,13 +13,14 @@
         <tr>
             <td class="f">
                 <?php echo $tag->id;?>
+                <input type="hidden" name="tag[id]" value=<?php echo $tag->id;?> />
             </td>
             <td class="s">
                 <input type="text" name="tag[name]" value ="<?php echo $tag->name;?>"/>
             </td> 
             <td class="s">
-                <input type="radio" name="tag[status]" value="1" <?php if($tag->status === '1') echo 'checked="checked"' ?>/>正常
-                <input type="radio" name="tag[status]" value="0" <?php if($tag->status === '0') echo 'checked="checked"' ?>/>封锁
+                <input type="radio" name="tag[status]" value="1" <?php if($tag->status === '1') echo 'checked="checked"' ?>/>开启
+                <input type="radio" name="tag[status]" value="0" <?php if($tag->status === '0') echo 'checked="checked"' ?>/>关闭
             </td>
             <td class="t">
                 <?php echo $tag->create_time;?>
