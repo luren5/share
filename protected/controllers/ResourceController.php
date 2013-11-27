@@ -35,7 +35,7 @@
                     //如果上面的步骤都没有问题然后才保存文件，记录到数据库
                     $model->attributes=$_POST['Resource'];
                     $model->contributor = Yii::app()->user->name;
-                    $model->attachment = isset($attachment_url) ? $attachment_url : '';
+                    $model->attachment = isset($attachment_url) ? $attachment_url : '';  
                     $model->create_time = date('Y-m-d H:i:s');
                     $model->validate();
                     if($model->save()) {

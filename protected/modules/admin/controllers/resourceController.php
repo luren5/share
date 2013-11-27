@@ -46,6 +46,10 @@ class ResourceController extends Controller
     }
     public function actionDelete() {
         if(isset($_GET['id'])) {
+            $attachment_url = Resource::model()->findByPk($_GET['id'])->attachment;
+            if(file_exists(ATT_URL.$attachment_url)) {
+                unlink(ATT_URL.$attachment_url);
+            }
             Resource::model()->deleteByPk($_GET['id']);
         }  
         $this->redirect(array('resource/index'));
