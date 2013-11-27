@@ -51,10 +51,10 @@
             <?php foreach($announcements as $announcement) {?>
             <li><?php echo $announcement->content;?></li>
             <?php }?>
-            
           </div>
             
           <?php $this->beginContent('//layouts/search'); ?><?php $this->endContent(); ?>
+            <?php $this->beginContent('//layouts/followUs_weibo'); ?><?php $this->endContent(); ?>
             <?php $this->beginContent('//layouts/contactUs'); ?><?php $this->endContent(); ?>
             
           <div class="well block top-user"> 

@@ -36,7 +36,7 @@ class Resource extends CActiveRecord
             array('description', 'required', 'message' => '资源描述不能为空'),
             array('description','length', 'max'=>100,'message'=>'描述内容不能超过100字'),
             array('remote_resource', 'length', 'max'=>120, 'message' => '外部链接长度太长'),
-            array('remote_resource', 'match', 'pattern' => '/^(http:\/\/)?(https:\/\/)?([\w\d-]+\.)+[\w-]+(\/[\d\w-.\/?%&=]*)?$/', 'message' => '链接格式不正确'),
+            //array('remote_resource', 'match', 'pattern' => '/^(http|https|ftp)://([A-Z0-9][A-Z0-9_-]*(?:.[A-Z0-9][A-Z0-9_-]*)+):?(d+)?/?/i', 'message' => '链接格式不正确'),
             array('contributor', 'length', 'max'=>12),
             array('tag_id', 'required', 'message' => '标签必选'),
             array('tag_id', 'numerical', 'integerOnly'=>true),

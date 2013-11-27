@@ -25,7 +25,7 @@
                     <li class="login"><a href="<?php echo $this->createUrl('user/login') ?>" >登录</a></li>
                     <li class="reg"><a href="<?php echo $this->createUrl('user/register') ?>">注册</a></li>
                 <?php }else { ?>
-                    <li><a href=""><?php echo Yii::app()->user->name; ?></a></li>
+                    <li><a href="<?php echo $this->createUrl('user/profile') ?>"><?php echo Yii::app()->user->name; ?></a></li>
                     <li><a href="<?php echo $this->createUrl('user/logout') ?>">退出</a></li>
                 <?php } ?>
           </ul>

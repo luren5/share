@@ -1238,7 +1238,7 @@ class CController extends CBaseController
         if(!empty($original_errors)) {
             foreach($original_errors as $value) {
                 foreach($value as $val) {
-                    array_push($errors, $val);
+                    $errors[$val] = false;
                 }
             }
         }

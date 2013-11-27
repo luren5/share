@@ -9,51 +9,50 @@
             
             if(isset($_POST['Resource'])) {
                 if(!isset(Yii::app()->user->identity)) {
-                    array_push($this->errors, '请在登录状态下分享');
+                    $this->errors['请在登录状态下分享'] = false;
                     $this->render('index', array('tags' => $tags, 'model'=>$model, 'errors' => $this->errors));
                     return;
                 }
                 
                 if($_FILES['Resource']['error']['attachment'] === 4 && empty($_POST['Resource']['remote_resource'])) {
-                    array_push($this->errors, '附件和外部链接必须至少要填一项');
+                    $this->errors['附件和外部链接必须至少要填一项'] = false;
                 } 
                 if($_FILES['Resource']['error']['attachment'] != 4) {
                     $attachment = CUploadedFile::getInstance($model, 'attachment');
                     if($attachment->getError() != 0) {
-                        array_push($this->errors, '上传文件错误');
+                        $this->errors['上传文件错误'] = false;
                     }
-                    if($attachment->getSize() > 1024*1024*2) {
-                        array_push($this->errors, '文件大小不能超过2M');
+                    if($attachment->getSize() > 1024*1024*5) {
+                        $this->errors['文件大小不能超过5M']= false;
                     }
-                    $allow_type = array('jpg', 'jepg', 'bmp', 'gif', 'zip', 'png', 'doc', 'wps', 'xls', 'et', 'txt');
-                   
+                    $allow_type = array('jpg', 'jepg', 'bmp', 'gif', 'zip', 'png', 'doc', 'wps', 'xls', 'et', 'txt', 'pdf');
                     if(!in_array($attachment->getExtensionName(), $allow_type)) {
-                        array_push($this->errors, '文件类型不允许');
+                        $this->errors['文件类型不允许'] = false;
                     }
-
-                    if (is_object($attachment) && get_class($attachment)==='CUploadedFile') {
-                        if(!file_exists(ATT_URL.date('Ym'))) {
-                            mkdir(ATT_URL.date('Ym'), true);
-                        }
-                        if(!file_exists(ATT_URL.date('Ym').'/index.php')) {
-                            file_put_contents(ATT_URL.date('Ym').'/index.php', '<?php header("Location: http://share.hgdonline.net");');
-                        }
-                        $_POST['Resource']['attachment'] = date('Ym').'/'.md5(time()).'.'.$attachment->getExtensionName();
-                    } 
+                    $attachment_url = date('Ym').'/'.md5(time()).'.'.$attachment->getExtensionName();
                 }
-
-                $model->attributes=$_POST['Resource'];
-                $model->contributor = Yii::app()->user->name;
-                $model->create_time = date('Y-m-d H:i:s');
-
-                $model->validate();
-                if($model->save()) {
-                    array_push($this->errors, '分享成功，谢谢您的贡献！点击查看<a href = "'.$this->createUrl('resource/single', array('rid'=> $model->id)).'">'.$this->createUrl('resource/single', array('rid'=> $model->id)).'</a>');
-                    if(!empty($_POST['Resource']['attachment'])) {
-                        $attachment->saveAs(ATT_URL.$_POST['Resource']['attachment'], true);//附件存储成功
+                if(empty($this->errors)) {
+                    //如果上面的步骤都没有问题然后才保存文件，记录到数据库
+                    $model->attributes=$_POST['Resource'];
+                    $model->contributor = Yii::app()->user->name;
+                    $model->attachment = isset($attachment_url) ? $attachment_url : '';
+                    $model->create_time = date('Y-m-d H:i:s');
+                    $model->validate();
+                    if($model->save()) {
+                        //数据记录成功后转储附件
+                        if(isset($attachment_url) && is_object($attachment) && get_class($attachment)==='CUploadedFile') {
+                            if(!file_exists(ATT_URL.date('Ym'))) {
+                                mkdir(ATT_URL.date('Ym'), true);
+                            }
+                            if(!file_exists(ATT_URL.date('Ym').'/index.php')) {
+                                file_put_contents(ATT_URL.date('Ym').'/index.php', '<?php header("Location: http://share.hgdonline.net");');
+                            }
+                            $attachment->saveAs(ATT_URL.$model->attachment, true);//附件存储成功
+                        }
+                        $this->errors['分享成功，谢谢您的贡献！<br/>点击查看<a href = "'.$this->createUrl('resource/single', array('rid'=> $model->id)).'">'.$this->createUrl('resource/single', array('rid'=> $model->id)).'</a>'] = true;
+                    } else {
+                        $this->errors += $this->assembleErrors($model->getErrors());
                     }
-                } else {
-                    $this->errors += $this->assembleErrors($model->getErrors());
                 }
             }
             $this->render('index', array('tags' => $tags, 'model'=>$model, 'errors' => $this->errors));

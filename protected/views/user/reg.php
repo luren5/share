@@ -3,17 +3,9 @@
         <div class="span12">
           <div class="row span10">
             <section class="offset2 block well">
-                <?php 
-                    if(!empty($errors)){
-                        foreach($errors as $value) {
-                ?>
-                            <div class="alert alert-error"><?php echo $value?></div>
-                <?php
-                        }
-                    }
-                ?>
+               <?php $this->beginContent('//layouts/errorBox', array('errors' =>$errors));$this->endContent();?>
               <form action="" method="POST" class="form-horizontal">
-                <legend>会员注册</legend>
+                <legend><h3>会员注册</h3></legend>
                 <div class="control-group">
                   <label class="control-label">用户名</label>
                   <div class="controls">

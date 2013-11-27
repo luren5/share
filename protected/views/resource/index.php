@@ -3,17 +3,15 @@
         <div class="span12">
           <div class="row span10">
             <section id="j-write" class="offset2 block well">
-                <?php 
-                    if(!empty($errors)){
-                        foreach($errors as $value) {
-                ?>
-                            <div class="alert alert-error"><?php echo $value?></div>
-                <?php
-                        }
-                    }
-                ?>
+                <?php $this->beginContent('//layouts/errorBox', array('errors' =>$errors));$this->endContent();?>
               <form action="" method="POST" class="form-horizontal" enctype="multipart/form-data">
-                <legend><h3>分享我的资源<span class="count" style="font-size: 16px;">(请在登录状态下分享)</span></h3></legend>
+                <legend>
+                    <h3>分享我的资源 
+                    <?php if(!isset(Yii::app()->user->identity)) { ?>
+                        <span class="count" style="font-size: 16px;">(请在登录状态下分享)</span>
+                    <?php } ?>
+                    </h3>
+                    </legend>
                 <div class="control-group">
                   <label class="control-label"><span style="color:red">*</span>标题</label>
                   <div class="controls">
@@ -30,7 +28,7 @@
                   <label class="control-label">附件</label>
                   <div class="controls">
                     <?php echo CHtml::activeFileField($model, 'attachment'); ?>
-                    <p class="help-block muted">附件和外部链接至少选其一，文件大小不能超过2M，格式只能是jpg、gif、jepg、bmp、doc、xls、wps、zip、txt、et、png之一,多个文件请先打包压缩后再上传！</p>
+                      <p class="help-block muted">附件和外部链接至少选其一，文件大小不能超过<span class="count">5M</span>，格式只能是<span class="count">jpg、gif、jepg、bmp、doc、xls、wps、zip、txt、et、png、pdf</span>之一,多个文件请先打包压缩后再上传！</p>
                   </div>
                 </div>
                 <div class="control-group">

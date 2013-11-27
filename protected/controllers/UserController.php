@@ -10,7 +10,7 @@
                         'maxLength'=>'4',       // 最多生成几个字符
                         'minLength'=>'4',       // 最少生成几个字符
                         'height'=>'40',
-                        'width'=>'230',
+                        'width'=>'150',
                 ), 
             ); 
         }
@@ -44,7 +44,23 @@
         }
 
         public function actionProfile() {
-            $this->render('profile');
+            if(!isset(Yii::app()->user->identity)) {
+                $this->redirect(array('index/index'));
+            }
+            
+            
+            
+            if(isset($_POST['user'])) {
+                print_r($_POST['user']); die();
+                $count=User::model()->updateCounters(
+                        array('username' => Yii::app()->user->name),
+                        array('email=:email'),
+                        array(':username'=>$_POST['user']['email'])
+                    ); 
+            }
+            
+            $user = User::model()->findByAttributes(array('username' => Yii::app()->user->name));
+            $this->render('profile', array('user' => $user));
         }
         
         public function actionLogout() {

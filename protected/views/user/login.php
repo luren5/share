@@ -3,15 +3,7 @@
         <div class="span12">
           <div class="row span10">
             <section class="offset2 block well">
-                <?php 
-                    if(!empty($errors)){
-                        foreach($errors as $error) {
-                ?>
-                            <div class="alert alert-error"><?php echo $error?></div>
-                <?php
-                        }
-                    }
-                ?>
+                <?php $this->beginContent('//layouts/errorBox', array('errors' =>$errors));$this->endContent();?>
               <form action="" method="POST" class="form-horizontal">
                 <legend>会员登录</legend>
                 <div class="control-group">
