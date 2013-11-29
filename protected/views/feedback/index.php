@@ -12,13 +12,7 @@
             
             <div class="well block">
                 <h3>留言反馈<span class="count" style="font-size: 15px">  (未登录用户也可留言！)</span></h3>
-                <?php 
-                    if(!empty($errors)){
-                        foreach($errors as $value) {
-                ?>
-                            <div class="alert alert-error"><?php echo $value?></div>
-                <?php } } ?>
-                            
+                <?php $this->beginContent('//layouts/errorBox', array('errors' =>$errors));$this->endContent();?>
             <form action="" method="POST" class="form-horizontal">
                 <div class="control-group">
                   <label class="control-label">标题</label>

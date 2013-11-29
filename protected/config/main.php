@@ -10,6 +10,7 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+        'application.extensions.yii-mail.*',  
 	),
 
 	'modules'=>array(
@@ -37,6 +38,20 @@ return array(
 			'allowAutoLogin'=>true,
             'loginUrl' => './index.php?r=user/login', //为前台设置默认的登录页面
 		),
+        'mail'=>array(  
+            'class' => 'application.extensions.yii-mail.YiiMail',  
+            'viewPath' => 'application.views.mail',  
+            'logging' => true,  
+            'dryRun' => false,  
+            'transportType'=>'smtp',     // case sensitive!  
+            'transportOptions'=>array(  
+                'host'=>'smtp',   // smtp服务器  
+                'username'=>'13307139608@163.com',    // 验证用户  
+                'password'=>'weoking',   // 验证密码  
+                'port'=>'25',           // 端口号  
+                //'encryption'=>'ssl',   
+                ),  
+        ),  
 		// uncomment the following to enable URLs in path-format
 		/*
 		'urlManager'=>array(

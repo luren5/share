@@ -25,7 +25,8 @@
                 if(!$model->save()) {
                     $this->errors = $this->assembleErrors($model ->getErrors());
                 } else {
-                    array_push($this->errors, '已经收到您宝贵的意见，我们会继续努力，做的更好！');
+                    $error_mes = '已收到您宝贵的意见，稍后将以邮件的方式回复您<br/>如果不确定邮箱是否正确，可进入用户中心查看并修改！';
+                    $this->errors[$error_mes] = true;
                 }
             }
             $this->render('index', array('errors' => $this->errors));
