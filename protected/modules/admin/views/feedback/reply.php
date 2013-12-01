@@ -1,5 +1,5 @@
 <section class="block well">
-这里是显示错误信息
+<?php $this->beginContent('//layouts/errorBox', array('errors' =>$errors));$this->endContent();?>
     <form action="" method="POST" class="form-horizontal">
         <legend>回复用户反馈</legend>
         <div class="control-group">

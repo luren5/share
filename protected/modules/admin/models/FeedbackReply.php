@@ -1,4 +1,17 @@
 <?php
+
+/**
+ * This is the model class for table "feedback_reply".
+ *
+ * The followings are the available columns in table 'feedback_reply':
+ * @property integer $id
+ * @property integer $feedback_id
+ * @property string $reply_content
+ * @property string $reply_from
+ * @property string $reply_to
+ * @property string $reply_to_email
+ * @property string $create_time
+ */
 class FeedbackReply extends CActiveRecord
 {
 	/**
@@ -17,13 +30,14 @@ class FeedbackReply extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('feedback_id, reply_content, reply_to, create_time', 'required'),
+			array('feedback_id, reply_content, reply_from, reply_to, reply_to_email, create_time', 'required'),
 			array('feedback_id', 'numerical', 'integerOnly'=>true),
 			array('reply_content', 'length', 'max'=>100),
-			array('reply_to', 'length', 'max'=>10),
+			array('reply_from, reply_to', 'length', 'max'=>10),
+			array('reply_to_email', 'length', 'max'=>24),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, feedback_id, reply_content, reply_to, create_time', 'safe', 'on'=>'search'),
+			array('id, feedback_id, reply_content, reply_from, reply_to, reply_to_email, create_time', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,7 +61,9 @@ class FeedbackReply extends CActiveRecord
 			'id' => 'ID',
 			'feedback_id' => 'Feedback',
 			'reply_content' => 'Reply Content',
+			'reply_from' => 'Reply From',
 			'reply_to' => 'Reply To',
+			'reply_to_email' => 'Reply To Email',
 			'create_time' => 'Create Time',
 		);
 	}
@@ -73,7 +89,9 @@ class FeedbackReply extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('feedback_id',$this->feedback_id);
 		$criteria->compare('reply_content',$this->reply_content,true);
+		$criteria->compare('reply_from',$this->reply_from,true);
 		$criteria->compare('reply_to',$this->reply_to,true);
+		$criteria->compare('reply_to_email',$this->reply_to_email,true);
 		$criteria->compare('create_time',$this->create_time,true);
 
 		return new CActiveDataProvider($this, array(
@@ -85,6 +103,7 @@ class FeedbackReply extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
+	 * @return FeedbackReply the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

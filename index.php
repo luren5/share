@@ -4,6 +4,6 @@
     
     require_once dirname(__FILE__).'/protected/config/constant.php';
     require_once($yii);
-   
+    
     header("Content-type: text/html; charset=utf-8"); 
     Yii::createWebApplication($config)->run();
