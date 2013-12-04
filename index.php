@@ -7,3 +7,4 @@
     
     header("Content-type: text/html; charset=utf-8"); 
     Yii::createWebApplication($config)->run();
+    

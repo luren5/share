@@ -25,7 +25,6 @@
                     <li class="login"><a href="<?php echo $this->createUrl('user/login') ?>" >登录</a></li>
                     <li class="reg"><a href="<?php echo $this->createUrl('user/register') ?>">注册</a></li>
                 <?php }else { ?>
-                    <li><a href="/u/528a04ffd886cbe148000001/messages">消息<span class="msg-count badge badge-success">1</span></a></li>
                     <li><a href="<?php echo $this->createUrl('user/profile') ?>"><?php echo Yii::app()->user->name; ?></a></li>
                     <li><a href="<?php echo $this->createUrl('user/logout') ?>">退出</a></li>
                 <?php } ?>
