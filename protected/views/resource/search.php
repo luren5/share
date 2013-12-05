@@ -22,17 +22,13 @@
                     </div>
               <?php } ?>
           </div>
-    <div class="pagination">
-        <ul>
-        <li class="disabled"><a href="<?php echo $this->createUrl('', array('page' => $cur_page - 1, 'key' => $key)) ?>">前一页</a></li>
-            <?php for($i = 1; $i <= $total_page; $i++) {?>
-                <li <?php if($cur_page == $i) { ?> class='active' <?php }?>>
-                    <a href="<?php echo $this->createUrl('', array('page' => $i, 'key' => $key)) ?>"><?php echo $i;?></a>
-                </li>
-            <?php } ?>
-        <li><a href="<?php echo $this->createUrl('', array('page' => $cur_page + 1, 'key' => $key)) ?>">下一页</a></li>
-        </ul>
-    </div>
+       <?php $this->beginContent('//layouts/pagination',   //分页小物件
+            array('cur_page' =>$cur_page,
+                'total_page' => $total_page,
+                'link_argument' => isset($link_argument) ? $link_argument : array()
+            ));
+            $this->endContent(); 
+        ?>     
 </div>
         </div>
           

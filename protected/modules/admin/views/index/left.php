@@ -66,7 +66,7 @@
         <li>
             <a href="#" class="nav-top-item">反馈</a>
             <ul>
-                <li><a href="<?php echo $this->createUrl('feedback/index')?>" target="right">用户建议</a></li>
+                <li><a href="<?php echo $this->createUrl('feedback/index')?>" target="right">用户反馈</a></li>
                 <li><a href="<?php echo $this->createUrl('feedback/replyList')?>" target="right">回复列表</a></li>
             </ul>
         </li>

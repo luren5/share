@@ -8,6 +8,7 @@
     <th>收件人地址</th>
     <th>发件人</th>
     <th>创建时间</th>
+    <th>删除</th>
   </tr>
      <?php foreach($replys as $reply) {?>
         <tr>
@@ -31,6 +32,11 @@
             </td>
             <td class="t">
                 <?php echo $reply->create_time;?>
+            </td>
+            <td>
+                <a href="<?php echo $this->createUrl('feedback/deleteReply', array('id' => $reply->id))?>">
+                    <img src="<?php echo ADMIN_IMG_URL;?>delete.png">
+                </a>
             </td>
         </tr>
     <?php } ?>

@@ -12,12 +12,12 @@
             return array(
                 array(
                     'allow',
-                    'actions'=> array('index', 'delete', 'reply', 'replyList'),
+                    'actions'=> array('index', 'delete', 'reply', 'replyList', 'deleteReply'),
                     'users' => array('@'),
                 ),
                 array(
                     'deny',
-                    'actions'=> array('index', 'delete', 'reply', 'replyList'),
+                    'actions'=> array('index', 'delete', 'reply', 'replyList', 'deleteReply'),
                     'users' => array('*'),
                 ),
 
@@ -41,15 +41,18 @@
         }
         
         public function actionDelete() {
-            
+            if(isset($_GET['id'])) {
+                Feedback::model()->deleteByPk($_GET['id']);
+            }   
+            $this->redirect(array('feedback/index'));
         }
-        
+       
         public function actionReply() {
             if(isset($_GET)) {
                 if(isset($_POST['feedback_reply'])) {
                     $user = User::model()->findAllByAttributes(array('username'=> $_POST['feedback_reply']['reply_to'])); 
                     if(!$user) {
-                        $this->errors['�Ҳ��������������ַ'] = 'false';
+                        $this->errors['找不到收件地址！'] = 'false';
                     } else {
                         $mail = Yii::createComponent('application.extensions.mailer.EMailer');
                         $mail->IsSMTP();                                      // set mailer to use SMTP
@@ -58,9 +61,9 @@
                         $mail->Username = "hgdshare@163.com";  // SMTP username
                         $mail->Password = "hgdonline"; // SMTP password
                         $mail->From = "hgdshare@163.com";
-                        $mail->FromName = "湖工大爱分享�?;
-                        $mail->AddAddress($user[0]->email, "收件�?);                 // name is optional
-                        $mail->Subject = "来自湖工大分享网的回�?;
+                        $mail->FromName = "湖工大爱分享网";
+                        $mail->AddAddress($user[0]->email, "收件人");                 // name is optional
+                        $mail->Subject = "来自湖工大分享网的回复";
                         $mail->Body    = $_POST['feedback_reply']['reply_content'];
                         $result = $mail->Send();
                         if($result === true) {
@@ -73,12 +76,12 @@
                             $model->create_time = date('Y-m-d H:i:s');
                             $model->validate();
                             if($model->save()) {
-                                $this->errors['回复成功,可去回复列表中查看所有回复记�?'] = true;
+                                $this->errors['回复成功,可去回复列表中查看所有回复记录!'] = true;
                             } else {
                                 $this->errors = $this->assembleErrors($model ->getErrors());
                             }
                         } else {
-                            $this->errors['邮件发�?失败'] = false;
+                            $this->errors['邮件发送失败'] = false;
                         }
                     }    
                 }
@@ -110,5 +113,12 @@
                 'total_page' => $total_page,
             ));
         }     
+        
+        public function actionDeleteReply() {
+            if(isset($_GET['id'])) {
+                FeedbackReply::model()->deleteByPk($_GET['id']);
+            }   
+            $this->redirect(array('feedback/replyList'));
+        }
     }
     

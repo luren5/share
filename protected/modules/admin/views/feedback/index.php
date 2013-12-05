@@ -34,7 +34,11 @@
                     'id' => $feedback->id,
                     ))?>">回复</a></button>
             </td>
-            <td><a href="<?php echo $this->createUrl('feedback/delete', array('id' => $feedback->id))?>"><img src="<?php echo ADMIN_IMG_URL;?>delete.png"></a></td>
+            <td>
+                <a href="<?php echo $this->createUrl('feedback/delete', array('id' => $feedback->id))?>">
+                    <img src="<?php echo ADMIN_IMG_URL;?>delete.png">
+                </a>
+            </td>
         </tr>
     <?php } ?>
 </table>
