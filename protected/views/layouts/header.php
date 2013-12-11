@@ -11,6 +11,7 @@
     </script><![endif]-->
     <link href="<?php echo CSS_URL?>bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="<?php echo CSS_URL?>app.css" type="text/css" rel="stylesheet">
+    <script src="<?php echo JS_URL?>jquery-1.7.2.min.js"></script>
   </head>
   <body><!--[if IE 6]>
     <div class="alert alert-error">

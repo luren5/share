@@ -11,7 +11,11 @@
             </div>
             
             <div class="well block">
-                <h3>留言反馈<span class="count" style="font-size: 15px">  (未登录用户也可留言！)</span></h3>
+                <h3>留言反馈
+                    <span class="count" style="font-size: 15px">  
+                        (为了确保您可以收到我们的回复，请在<a href="<?php echo $this->createUrl('user/login') ?>" >登录</a>状态下留言！)
+                    </span>
+                </h3>
                 <?php $this->beginContent('//layouts/errorBox', array('errors' =>$errors));$this->endContent();?>
             <form action="" method="POST" class="form-horizontal">
                 <div class="control-group">

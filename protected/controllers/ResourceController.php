@@ -66,6 +66,7 @@
                 $this->redirect(array('index/index'));
             }
             //评论
+            $resource = Resource::model()->findByPk($_GET['rid']);
             if(isset($_POST['content'])) {
                 if(!isset(Yii::app()->user->identity)) {
                     array_push($this->errors, '请先登录！');
@@ -73,6 +74,7 @@
                     $comment = new Comment();
                     $comment->content = $_POST['content'];
                     $comment->author = Yii::app()->user->name;
+                    $comment->comment_to = !empty($_POST['comment_to']) ? $_POST['comment_to'] : $resource['contributor'];
                     $comment->resource_id = $_GET['rid'];
                     $comment->create_time = date('Y-m-d H:i:s');
                     $comment->validate();
@@ -82,7 +84,6 @@
                 }
             }
             
-            $resource = Resource::model()->findByPk($_GET['rid']);
             $tag_name = Tags::model()->findByPk($resource->tag_id)->name;
             
             //查找评论

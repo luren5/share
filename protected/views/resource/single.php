@@ -41,26 +41,32 @@
               </div>
             </div>
           </div>
-          <section id="content-like" class="content-like"><a title="喜欢就点评一下" class="like "></a><a title="不喜欢就给点意见" class="dislike "></a></section>
+          <section id="content-like" class="content-like"><a title="喜欢就点评一下" href='#commot_to' class="like "></a><a title="不喜欢就给点意见" href='#commot_to' class="dislike "></a></section>
           <div class="alert alert-info">
             <h4>对这个资源进行一下点评吧，会对后面的童鞋有帮助哦！</h4>
           </div>
-          <?php 
-                    if(!empty($errors)){
-                        foreach($errors as $value) {
-                ?>
-                            <div class="alert alert-error"><?php echo $value?></div>
-                <?php
-                        }
-                    }
-                ?>
+          <?php $this->beginContent('//layouts/errorBox', array('errors' =>$errors));$this->endContent();?>
           <section id="reply-list" class="reply-list">
-              <?php  foreach($comments as $comment) {?>
+              <?php $i = 0; foreach($comments as $comment) {?>
                 <div class="reply-item clearfix">
-                    <div class="pull-left"><img src="<?php echo IMG_URL?>user.png">
-                        </div><span class="comment pull-right"></span>
+                    <div class="pull-left">
+                        <img src="<?php echo IMG_URL?>user.png">
+                    </div>
+                    <span class="comment pull-right">
+                        <a class="comment_to" href='#commot_to'>回复</a>
+                        <input type="hidden" value = "<?php echo $comment->author;?>"/>
+                    </span>
                     <div class="reply-body">
-                        <div class="reply-footer"><span><?php echo $comment->author;?> • </span><span class="time"><?php echo $comment->create_time?> </span>
+                        <div class="reply-footer">
+                            <span class="floor pull-right">
+                                <?php echo ++$i; ?>楼
+                            </span>
+                            <span>
+                                <?php echo $comment->author;?> • 
+                            </span>
+                            <span class="time">
+                                <?php echo $comment->create_time?> 
+                            </span>
                         </div>
                         <div class="reply-content">  
                         <p><?php echo $comment->content;?></p>
@@ -78,7 +84,9 @@
         ?>
           <section class="content-reply">
             <form action="" method="post">
+                <span></span>
               <textarea name="content" placeholder="登录后可评论，请不要超过50字"></textarea>
+              <input type='hidden' id='comment_to' name ='comment_to' value=''/>
               <input type="submit" value="回复" class="btn btn-primary pull-right">
             </form>
           </section>
@@ -88,5 +96,7 @@
             <?php $this->beginContent('//layouts/followUs_weibo'); ?><?php $this->endContent(); ?>
           <?php $this->beginContent('//layouts/followUs_weixin'); ?><?php $this->endContent(); ?>
         </div>
+        <a name="commot_to"></a>
       </div>
     </div>
+<script src="<?php echo JS_URL?>resource_single.js" ></script>

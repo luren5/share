@@ -17,19 +17,22 @@
         
         public function actionIndex() {
             if(isset($_POST['feedback'])) {
-                $model = new Feedback;
-                $model->attributes = $_POST['feedback'];
-                $model->create_time = date('Y-m-d H:i:s');
-                $model->messageBy = Yii::app()->user->name;
-                $model->validate();
-                if(!$model->save()) {
-                    $this->errors = $this->assembleErrors($model ->getErrors());
+                if(!isset(Yii::app()->user->identity)) {
+                    $this->errors['请先登录，并保证邮箱地址正确！'] = false;
                 } else {
-                    $error_mes = '已收到您宝贵的意见，稍后将以邮件的方式回复您<br/>如果不确定邮箱是否正确，可进入用户中心查看并修改！';
-                    $this->errors[$error_mes] = true;
+                    $model = new Feedback;
+                    $model->attributes = $_POST['feedback'];
+                    $model->create_time = date('Y-m-d H:i:s');
+                    $model->messageBy = Yii::app()->user->name;
+                    $model->validate();
+                    if(!$model->save()) {
+                        $this->errors = $this->assembleErrors($model ->getErrors());
+                    } else {
+                        $error_mes = '已收到您宝贵的意见，稍后将以邮件的方式回复您<br/>如果不确定邮箱是否正确，可进入用户中心查看并修改！';
+                        $this->errors[$error_mes] = true;
+                    }
                 }
             }
             $this->render('index', array('errors' => $this->errors));
         }
-
     }

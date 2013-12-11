@@ -7524,3 +7524,17 @@ Stack trace:
 REQUEST_URI=/share/index.php?r=resource/search&page=2&key=%E4%BA%BA
 HTTP_REFERER=http://localhost/share/index.php?r=resource/search
 ---
+2013/12/11 16:26:57 [error] [php] include(Administrator.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (E:\W3\share\framework\YiiBase.php:427)
+Stack trace:
+#0 E:\W3\share\protected\controllers\AdministratorController.php(5): spl_autoload_call()
+#1 E:\W3\share\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIndex()
+#2 E:\W3\share\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\W3\share\framework\web\CController.php(286): AdministratorController->runAction()
+#4 E:\W3\share\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 E:\W3\share\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 E:\W3\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\W3\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 E:\W3\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=administrator/index
+in E:\W3\share\protected\controllers\AdministratorController.php (5)
+in E:\W3\share\index.php (9)
