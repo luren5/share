@@ -47,11 +47,7 @@
             if(!isset(Yii::app()->user->identity)) {
                 $this->redirect(array('index/index'));
             }
-            
-            
-            
-            if(isset($_POST['user'])) {
-                print_r($_POST['user']); die();
+            if(isset($_POST['user'])) {   //更改用户资料
                 $count=User::model()->updateCounters(
                         array('username' => Yii::app()->user->name),
                         array('email=:email'),
@@ -59,8 +55,20 @@
                     ); 
             }
             
+            $resource = new Resource;
+            $resource_num = $resource->countByAttributes(array('contributor' => Yii::app()->user->name));
+           
+            $comment = new Comment;
+            $comment_num = $comment->countByAttributes(array('author' => Yii::app()->user->name));
+            $notices =  $comment->findAllByAttributes(array('comment_to' => Yii::app()->user->name, 'status' => 0));
+            
             $user = User::model()->findByAttributes(array('username' => Yii::app()->user->name));
-            $this->render('profile', array('user' => $user));
+            $this->render('profile', array(
+                'user' => $user,
+                'resource_num' => $resource_num,
+                'comment_num' => $comment_num,
+                'notices' => $notices,
+                    ));
         }
         
         public function actionLogout() {
@@ -69,5 +77,5 @@
             //$this->redirect(Yii::app()->homeUrl);
             //这里设置默认的siteController
         }
-
+       
     }

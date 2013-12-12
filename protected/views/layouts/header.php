@@ -25,7 +25,15 @@
                 <?php if(!isset(Yii::app()->user->identity)) { ?>
                     <li class="login"><a href="<?php echo $this->createUrl('user/login') ?>" >登录</a></li>
                     <li class="reg"><a href="<?php echo $this->createUrl('user/register') ?>">注册</a></li>
-                <?php }else { ?>
+                <?php }else {?> 
+                    
+                <?php if(isset(Yii::app()->session['notice_num'])) { ?>
+                    <li><a href="<?php echo $this->createUrl('user/profile') ?>">提醒
+                            <span class="msg-count badge badge-success"><?php echo Yii::app()->session['notice_num'];?></span>
+                        </a>
+                    </li>
+                <?php }?>
+                    
                     <li><a href="<?php echo $this->createUrl('user/profile') ?>"><?php echo Yii::app()->user->name; ?></a></li>
                     <li><a href="<?php echo $this->createUrl('user/logout') ?>">退出</a></li>
                 <?php } ?>

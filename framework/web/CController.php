@@ -112,6 +112,8 @@ class CController extends CBaseController
 		$this->_id=$id;
 		$this->_module=$module;
 		$this->attachBehaviors($this->behaviors());
+        
+        $this->getNotice();
 	}
 
 	/**
@@ -1261,4 +1263,15 @@ class CController extends CBaseController
         return array('cur_page' => $cur_page, 'total_page' => $total_page);
     }
     
+    
+    public function getNotice() {
+        if(isset(Yii::app()->user->identity) && !isset(Yii::app()->session['notice'])) {
+            $username = Yii::app()->user->name;
+            $notice = Comment::model()->findAllByAttributes(array('comment_to' => $username, 'status' => 0));
+            if(!empty($notice)) {
+                Yii::app()->session['notice_num'] = count($notice);
+                Yii::app()->session['notice'] = $notice;
+            }
+        }
+    }
 }

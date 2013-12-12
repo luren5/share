@@ -69,7 +69,7 @@
                             </span>
                         </div>
                         <div class="reply-content">  
-                        <p><?php echo $comment->content;?></p>
+                        <p><?php echo '<a>@'.$comment->comment_to.'</a>  '.$comment->content;?></p>
                         </div>
                     </div>
                 </div>

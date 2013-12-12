@@ -66,10 +66,22 @@
                 $this->redirect(array('index/index'));
             }
             //评论
-            $resource = Resource::model()->findByPk($_GET['rid']);
+            $resource = Resource::model()->findByPk($_GET['rid']);   
+            if(isset(Yii::app()->session['notice'])) {
+                $notices = Yii::app()->session['notice'];
+                foreach($notices as $notice) {
+                    if($notice->resource_id == $resource->id) {
+                        Comment::model()->updateByPk($notice->id, array('status' => 1));
+                        unset(Yii::app()->session['notice']);
+                        unset(Yii::app()->session['notice_num']);
+                        $this->getNotice();
+                    }
+                }
+            }
+            
             if(isset($_POST['content'])) {
                 if(!isset(Yii::app()->user->identity)) {
-                    array_push($this->errors, '请先登录！');
+                    $this->errors['请在登录状态下评论！'] = false;
                 } else {
                     $comment = new Comment();
                     $comment->content = $_POST['content'];
@@ -184,7 +196,4 @@
                     $this->render('error', $error);
             }
         }
-
-
-
     }
