@@ -7,7 +7,7 @@
             <p class="name">minishine </p>
             <p>
                 <span> <small>分享了</small><?php echo $resource_num; ?><small>个资源</small></span>
-                <span> <small>发表了</small><?php echo $comment_num;?><small>个评论</small></span>
+                <span> <small>发表了</small><?php echo $comment_num;?><small>条评论</small></span>
             </p>
           </div>
             <section class="offset block well">
