@@ -1,5 +1,8 @@
 <html>
   <head>
+    <title>湖工大爱分享网</title>
+    <meta name="湖工大爱分享,湖工大,分享,湖工大在线,下载,课后习题答案,大物实验报告,入党申请书,计算机,电子,大物,期末考试,真题,ppt,活动策划,四六级,考研" content="湖工大爱分享网">
+    <meta name="Description" content="湖工大在线,分享网，湖工大下载站"> 
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <link rel="shortcut icon" href="<?php echo IMG_URL?>favicon.png"  type="image/vnd.microsoft.icon"><!--[if lt IE 9]>
     <script>
