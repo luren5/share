@@ -12,12 +12,12 @@
             return array(
                 array(
                     'allow',
-                    'actions'=> array('index', 'add', 'delete', 'update'),
+                    'actions'=> array('index', 'add', 'delete'),
                     'users' => array('@'),
                 ),
                 array(
                     'deny',
-                    'actions'=> array('index', 'add', 'delete', 'update'),
+                    'actions'=> array('index', 'add', 'delete'),
                     'users' => array('*'),
                 ),
 
@@ -56,7 +56,7 @@
                 array_push($this->errors, '删除操作只有超级管理员可执行');
             } else {
                 if(isset($_GET['id'])) {
-                    Tags::model()->deleteByPk($_GET['id']);
+                    Administrator::model()->deleteByPk($_GET['id']);
                 }  
             }
             $this->redirect(array('administrator/index'));

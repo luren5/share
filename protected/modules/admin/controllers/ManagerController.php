@@ -36,29 +36,7 @@
             $this->renderPartial('login',  array('errors' => $this->errors));
         }
         
-        
-        public function actionAdd() {
-            return;
-            $model = new Administrator();
-            $data = array(
-                'username' => 'minishine', 
-                'password'=> md5('xuhuan101'),
-                'realname' => '徐欢欢',
-                'email' => 'xhuan@hgdonline.net',
-                'phone' => '13307139608',
-                'create_time' => date('Y-m-d H:i:s'),
-            );
-            $model->attributes = $data;
-            $model->save();
-            
-            
-        }
-        
         public function actionLogout() {
-            //删除session变量
-            //Yii::app()->session->clear();
-            //删除服务器session变量
-            //Yii::app()->session->destroy();
             Yii::app()->user->logout();
             $this->redirect(array('manager/login'));
         }

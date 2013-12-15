@@ -60,9 +60,19 @@
         
         public function actionDelete() {
             if(isset($_GET['id'])) {
-                Tags::model()->deleteByPk($_GET['id']);
+                $resource_num = Resource::model()->countByAttributes(array('tag_id' => $_GET['id']));
+                if(!$resource_num) {
+                    Tags::model()->deleteByPk($_GET['id']);
+                    $this->redirect(array('tag/index'));
+                } else {
+                    $mes = '您正要删除的标签下有'.$resource_num ."个资源，您必须先手动删除此标签下的全部资源后才能删除此标签！<br/>可到前台点击标签名查看具体资源…";
+                    $this->errors[$mes] = false;
+                    $this->render('delete', array(
+                        'errors' => $this->errors
+                    ));
+                }
             }  
-            $this->redirect(array('tag/index'));
+            
         }
         
         public function actionUpdate() {

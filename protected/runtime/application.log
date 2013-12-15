@@ -1,1 +1,117 @@
-﻿
+﻿2013/12/15 19:49:37 [error] [php] Trying to get property of non-object (E:\code\share\protected\controllers\ResourceController.php:99)
+Stack trace:
+#0 E:\code\share\framework\web\CController.php(288): ResourceController->runAction()
+#1 E:\code\share\framework\web\CController.php(267): ResourceController->runActionWithFilters()
+#2 E:\code\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 E:\code\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=34
+in E:\code\share\protected\controllers\ResourceController.php (99)
+in E:\code\share\index.php (9)
+2013/12/15 19:49:52 [error] [php] Trying to get property of non-object (E:\code\share\protected\controllers\ResourceController.php:99)
+Stack trace:
+#0 E:\code\share\framework\web\CController.php(288): ResourceController->runAction()
+#1 E:\code\share\framework\web\CController.php(267): ResourceController->runActionWithFilters()
+#2 E:\code\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 E:\code\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=31
+in E:\code\share\protected\controllers\ResourceController.php (99)
+in E:\code\share\index.php (9)
+2013/12/15 19:50:51 [error] [php] Trying to get property of non-object (E:\code\share\protected\controllers\ResourceController.php:99)
+Stack trace:
+#0 E:\code\share\framework\web\CController.php(288): ResourceController->runAction()
+#1 E:\code\share\framework\web\CController.php(267): ResourceController->runActionWithFilters()
+#2 E:\code\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 E:\code\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=23
+in E:\code\share\protected\controllers\ResourceController.php (99)
+in E:\code\share\index.php (9)
+2013/12/15 19:55:05 [error] [php] Trying to get property of non-object (E:\code\share\protected\controllers\ResourceController.php:99)
+Stack trace:
+#0 E:\code\share\framework\web\CController.php(288): ResourceController->runAction()
+#1 E:\code\share\framework\web\CController.php(267): ResourceController->runActionWithFilters()
+#2 E:\code\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 E:\code\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=23
+in E:\code\share\protected\controllers\ResourceController.php (99)
+in E:\code\share\index.php (9)
+2013/12/15 19:55:24 [error] [php] Trying to get property of non-object (E:\code\share\protected\controllers\ResourceController.php:99)
+Stack trace:
+#0 E:\code\share\framework\web\CController.php(288): ResourceController->runAction()
+#1 E:\code\share\framework\web\CController.php(267): ResourceController->runActionWithFilters()
+#2 E:\code\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 E:\code\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=31
+in E:\code\share\protected\controllers\ResourceController.php (99)
+in E:\code\share\index.php (9)
+2013/12/15 19:55:31 [error] [php] Trying to get property of non-object (E:\code\share\protected\controllers\ResourceController.php:99)
+Stack trace:
+#0 E:\code\share\framework\web\CController.php(288): ResourceController->runAction()
+#1 E:\code\share\framework\web\CController.php(267): ResourceController->runActionWithFilters()
+#2 E:\code\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 E:\code\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=19
+in E:\code\share\protected\controllers\ResourceController.php (99)
+in E:\code\share\index.php (9)
+2013/12/15 19:55:43 [error] [php] Trying to get property of non-object (E:\code\share\protected\controllers\ResourceController.php:99)
+Stack trace:
+#0 E:\code\share\framework\web\CController.php(288): ResourceController->runAction()
+#1 E:\code\share\framework\web\CController.php(267): ResourceController->runActionWithFilters()
+#2 E:\code\share\framework\web\CWebApplication.php(282): ResourceController->run()
+#3 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 E:\code\share\index.php(9): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/single&rid=12
+in E:\code\share\protected\controllers\ResourceController.php (99)
+in E:\code\share\index.php (9)
+2013/12/15 19:56:34 [error] [exception.CDbException] exception 'CDbException' with message 'Table "comment" does not have a column named "comment_to".' in E:\code\share\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 E:\code\share\framework\db\ar\CActiveRecord.php(1535): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 E:\code\share\framework\web\CController.php(1269): CActiveRecord->findAllByAttributes(Array)
+#2 E:\code\share\framework\web\CController.php(116): CController->getNotice()
+#3 E:\code\share\framework\web\CWebApplication.php(359): CController->__construct('index', NULL)
+#4 E:\code\share\framework\web\CWebApplication.php(276): CWebApplication->createController('index/index')
+#5 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController('index/index')
+#6 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\code\share\index.php(9): CApplication->run()
+#8 {main}
+REQUEST_URI=/share/index.php?r=index/index
+HTTP_REFERER=http://localhost/share/index.php?r=user/login
+---
+2013/12/15 19:58:11 [error] [exception.CDbException] exception 'CDbException' with message 'Table "comment" does not have a column named "comment_to".' in E:\code\share\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 E:\code\share\framework\db\ar\CActiveRecord.php(1535): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 E:\code\share\framework\web\CController.php(1269): CActiveRecord->findAllByAttributes(Array)
+#2 E:\code\share\framework\web\CController.php(116): CController->getNotice()
+#3 E:\code\share\framework\web\CWebApplication.php(359): CController->__construct('index', NULL)
+#4 E:\code\share\framework\web\CWebApplication.php(276): CWebApplication->createController('index/index')
+#5 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController('index/index')
+#6 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\code\share\index.php(9): CApplication->run()
+#8 {main}
+REQUEST_URI=/share/index.php?r=index/index
+---
+2013/12/15 19:58:16 [error] [exception.CDbException] exception 'CDbException' with message 'Table "comment" does not have a column named "comment_to".' in E:\code\share\framework\db\schema\CDbCommandBuilder.php:694
+Stack trace:
+#0 E:\code\share\framework\db\ar\CActiveRecord.php(1535): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, '', Array, '`t`.')
+#1 E:\code\share\framework\web\CController.php(1269): CActiveRecord->findAllByAttributes(Array)
+#2 E:\code\share\framework\web\CController.php(116): CController->getNotice()
+#3 E:\code\share\framework\web\CWebApplication.php(359): CController->__construct('index', NULL)
+#4 E:\code\share\framework\web\CWebApplication.php(276): CWebApplication->createController('')
+#5 E:\code\share\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#6 E:\code\share\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 E:\code\share\index.php(9): CApplication->run()
+#8 {main}
+REQUEST_URI=/share/index.php
+---
