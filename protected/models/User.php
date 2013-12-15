@@ -32,7 +32,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
         return array(
                 array('username', 'required', 'message' => '用户名不能为空'),
-                array('username', 'length', 'max' => 24, 'message' => '用户名长度不能超过24'),
+                array('username', 'length', 'max' => 10, 'message' => '用户名长度不能超过10'),
                 array('username', 'unique', 'message' => '该用户名已经被注册'),
                 array('password', 'required', 'message' => '密码不能为空'),
                 array('password', 'length', 'min' => 6,'max' => 15,'message' => '密码长度应该在6-15位之间'),
@@ -72,9 +72,9 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'username' => 'Username',
-			'password' => 'Password',
-			'email' => 'Email',
+			'username' => '用户名',
+			'password' => '密码',
+			'email' => '邮箱',
 			'status' => 'Status',
 			'create_time' => 'Create Time',
 		);

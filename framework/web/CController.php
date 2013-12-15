@@ -1263,7 +1263,6 @@ class CController extends CBaseController
         return array('cur_page' => $cur_page, 'total_page' => $total_page);
     }
     
-    
     public function getNotice() {
         if(isset(Yii::app()->user->identity) && !isset(Yii::app()->session['notice'])) {
             $username = Yii::app()->user->name;

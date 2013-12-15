@@ -11,12 +11,12 @@
             return array(
                 array(
                     'allow',
-                    'actions'=>array('logout'),
+                    'actions'=>array('logout', 'add'),
                     'users' => array('@'),
                 ),
                 array(
                     'deny',
-                    'actions'=>array('logout'),
+                    'actions'=>array('logout', 'add'),
                     'users' => array('*'),
                 ),
 

@@ -99,7 +99,7 @@ class CStringValidator extends CValidator
 		}
 		if($this->max!==null && $length>$this->max)
 		{
-			$message=$this->tooLong!==null?$this->tooLong:Yii::t('yii','{attribute} is too long (maximum is {max} characters).');
+			$message=$this->tooLong!==null?$this->tooLong:Yii::t('yii','{attribute}太长 (最大长度为{max}个字符)');
 			$this->addError($object,$attribute,$message,array('{max}'=>$this->max));
 		}
 		if($this->is!==null && $length!==$this->is)

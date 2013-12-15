@@ -17,9 +17,9 @@
   <!-- End #logn-top -->
   <div id="login-content">
     <form action="" method="post">
-       <?php foreach($errors as $error) {?>
+       <?php foreach($errors as $key => $value) {?>
       <div class="notification information png_bg">
-        <div><?php echo $error; ?></div>
+        <div><?php echo $key; ?></div>
       </div>
         <?php }?>
       <p>
