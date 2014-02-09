@@ -1,7 +1,7 @@
 <?php
     class ResourceController extends Controller
     {
-
+        
         public function actionIndex()
         {
             $model = new Resource;
@@ -37,8 +37,21 @@
                     $model->contributor = Yii::app()->user->name;
                     $model->attachment = isset($attachment_url) ? $attachment_url : '';  
                     $model->create_time = date('Y-m-d H:i:s');
+                    
+                    
                     $model->validate();
-                    if($model->save()) {
+                    if($aa = $model->save()) {
+                        // 查询用户搜索的关键词集合，更新缓存
+                        $redis = RedisStorage::getInstance();
+                        $keys = $redis->sMembers(RESOURCE_SEARCH_KEY_SETS);
+                        $resource_ser = serialize(Resource::model()->findByPk($model->id));
+        
+                        foreach($keys as $key) {
+                            if(stristr($model->title, $key)) {
+                                $redis->lPush(RESOURCE_SEARCH_KEY_PREFIX.$key, $resource_ser);
+                            }
+                        }
+                        
                         //数据记录成功后转储附件
                         if(isset($attachment_url) && is_object($attachment) && get_class($attachment)==='CUploadedFile') {
                             if(!file_exists(ATT_URL.date('Ym'))) {
@@ -129,8 +142,25 @@
         public function actionSearch() {
             if(!empty($_POST['key']) || !empty($_GET['key'])) {
                 $key = !empty($_POST['key']) ? $_POST['key'] : $_GET['key'];
-                $resources = Resource::model()->findAllBySql("select * from resource where title like :title limit 50",array(':title' => '%'.$key.'%'));
-                $total_records = sizeof($resources);
+                $lkey = RESOURCE_SEARCH_KEY_PREFIX.$key;
+                $redis = RedisStorage::getInstance();
+                
+                if($redis->exists($lkey)) {
+                    $resources_ser = $redis->lRange($lkey, 0, -1);
+                    foreach($resources_ser as $val) {
+                        $resources[] = unserialize($val);
+                    }
+                } else {
+                    $resources = Resource::model()->findAllBySql("select * from resource where title like :title limit 50",array(':title' => '%'.$key.'%'));
+                    if(!empty($resources)) {
+                        foreach($resources as $resource) {
+                            $redis->lpush($lkey, serialize($resource));
+                        }
+                        $redis->sAdd(RESOURCE_SEARCH_KEY_SETS, $key);
+                    }
+                }
+                
+                $total_records = sizeof($resources);  // max total records is 50
                 $total_page = (int)ceil($total_records/10);
                 if(!isset($_GET['page'])) {
                     $cur_page = 1;
@@ -143,11 +173,20 @@
                         $cur_page = $_GET['page'];
                     }
                 }
-
-                $resources = Resource::model()->findAllBySql("select * from resource where title like :title order by create_time desc limit :sta, :limit",array(':title' => '%'.$key.'%', ':sta'=>($cur_page -1)*8, ':limit'=>10));
-
+                
+                if(!isset($_GET['mobile'])) {
+                    $result = array_slice($resources, ($cur_page - 1)*8, 10);
+                } else {
+                    foreach($resources as $key => $resource) {
+                        $result[$key]['id'] = $resource->id;
+                        $result[$key]['title'] = $resource->title;
+                    }
+                    echo json_encode($result);
+                    exit;
+                }
+                
                 $this->render('search', array(
-                    'resources' => $resources,
+                    'resources' => $result,
                     'key' => $key,
                     'total_records' => $total_records,
                     'total_page' =>$total_page, 

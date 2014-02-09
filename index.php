@@ -1,4 +1,10 @@
 <?php
+//$redis = new Redis();
+//$redis->connect('127.0.0.1',6379);
+//$redis->set('test','hello world!');
+//echo $redis->get('test');
+//echo 898; die();  
+
     $yii = dirname(__FILE__).'/framework/yii.php';
     $config = dirname(__FILE__).'/protected/config/main.php';
     

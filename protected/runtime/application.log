@@ -115,3 +115,292 @@ Stack trace:
 #8 {main}
 REQUEST_URI=/share/index.php
 ---
+2014/02/09 11:02:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'share'' in /var/www/share/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/share/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/share/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/share/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/share/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /var/www/share/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /var/www/share/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /var/www/share/framework/db/ar/CActiveRecord.php(1595): CActiveRecord->getCommandBuilder()
+#7 /var/www/share/protected/controllers/IndexController.php(6): CActiveRecord->count()
+#8 /var/www/share/framework/web/actions/CInlineAction.php(49): IndexController->actionIndex()
+#9 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#10 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#11 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/share/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#14 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /var/www/share/index.php(9): CApplication->run()
+#16 {main}
+REQUEST_URI=/share/
+---
+2014/02/09 18:19:26 [error] [php] Missing argument 1 for CController::__construct(), called in /var/www/share/protected/controllers/ResourceController.php on line 7 and defined (/var/www/share/framework/web/CController.php:110)
+Stack trace:
+#0 /var/www/share/framework/web/CWebApplication.php(276): CWebApplication->createController()
+#1 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#2 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#3 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+in /var/www/share/protected/controllers/ResourceController.php (7)
+in /var/www/share/index.php (15)
+2014/02/09 18:35:55 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController._cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(141): CComponent->__get('_cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:37:02 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController._cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(141): CComponent->__get('_cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:37:04 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController._cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(141): CComponent->__get('_cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:37:57 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController._cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(141): CComponent->__get('_cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:38:14 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController._cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('_cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:38:58 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController._cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('_cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:39:01 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController._cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('_cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:41:41 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController.cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:42:42 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController.cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:44:02 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController.cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:44:25 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController.cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:44:27 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController.cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:44:29 [error] [exception.CException] exception 'CException' with message 'Property "ResourceController.cache" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(135): CComponent->__get('cache')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=%E4%B8%80
+---
+2014/02/09 18:57:59 [error] [php] mkdir(): Permission denied (/var/www/share/protected/controllers/ResourceController.php:60)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams()
+#1 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#2 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#3 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/index
+in /var/www/share/protected/controllers/ResourceController.php (60)
+in /var/www/share/index.php (15)
+2014/02/09 19:04:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loing".' in /var/www/share/framework/web/CController.php:485
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(272): CController->missingAction('loing')
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('loing')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/manager/l...')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=admin/manager/loing
+---
+2014/02/09 19:04:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loin".' in /var/www/share/framework/web/CController.php:485
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(272): CController->missingAction('loin')
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('loin')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/manager/l...')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=admin/manager/loin
+---
+2014/02/09 19:05:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/resource/index".' in /var/www/share/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/resource/...')
+#1 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/share/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/share/index.php?r=admin/resource/index
+HTTP_REFERER=http://192.168.1.6/share/index.php?r=admin/index/left
+---
+2014/02/09 19:05:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/resource/index".' in /var/www/share/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/resource/...')
+#1 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/share/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/share/index.php?r=admin/resource/index
+HTTP_REFERER=http://192.168.1.6/share/index.php?r=admin/index/left
+---
+2014/02/09 19:05:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/resource/index".' in /var/www/share/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/resource/...')
+#1 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/share/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/share/index.php?r=admin/resource/index
+HTTP_REFERER=http://192.168.1.6/share/index.php?r=admin/index/left
+---
+2014/02/09 19:05:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/resource/index".' in /var/www/share/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/resource/...')
+#1 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/share/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/share/index.php?r=admin/resource/index
+HTTP_REFERER=http://192.168.1.6/share/index.php?r=admin/index/left
+---
+2014/02/09 19:06:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "admin/resource/index".' in /var/www/share/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/resource/...')
+#1 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/share/index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/share/index.php?r=admin/resource/index
+HTTP_REFERER=http://192.168.1.6/share/index.php?r=admin/index/left
+---
