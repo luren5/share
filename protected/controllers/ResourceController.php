@@ -180,6 +180,7 @@
                     foreach($resources as $key => $resource) {
                         $result[$key]['id'] = $resource->id;
                         $result[$key]['title'] = $resource->title;
+                        $result[$key]['description'] = $resource->description;
                     }
                     echo json_encode($result);
                     exit;
@@ -225,6 +226,21 @@
             
         }
 
+        public function actionDownload() {
+            $this->renderPartial('download');exit;
+            
+            
+            if(!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+                return false;
+            }
+            $system = isset($_GET['system']) ? $_GET['system'] : '';
+            $id = (int)$_GET['id'];
+            $resource = Resource::model()->findByPk($id);
+            print_r($resource); die();
+            
+        }
+
+
         public function actionError()
         {
             if($error=Yii::app()->errorHandler->error)
@@ -235,4 +251,5 @@
                     $this->render('error', $error);
             }
         }
+        
     }

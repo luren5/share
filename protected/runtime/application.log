@@ -404,3 +404,198 @@ Stack trace:
 REQUEST_URI=/share/index.php?r=admin/resource/index
 HTTP_REFERER=http://192.168.1.6/share/index.php?r=admin/index/left
 ---
+2014/02/09 19:25:40 [error] [php] mkdir(): Permission denied (/var/www/share/protected/controllers/ResourceController.php:58)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams()
+#1 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#2 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#3 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/index
+in /var/www/share/protected/controllers/ResourceController.php (58)
+in /var/www/share/index.php (15)
+2014/02/09 19:26:44 [error] [php] mkdir(): Permission denied (/var/www/share/protected/controllers/ResourceController.php:58)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams()
+#1 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#2 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#3 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/index
+in /var/www/share/protected/controllers/ResourceController.php (58)
+in /var/www/share/index.php (15)
+2014/02/09 19:26:59 [error] [php] mkdir(): Permission denied (/var/www/share/protected/controllers/ResourceController.php:58)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams()
+#1 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#2 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#3 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/index
+in /var/www/share/protected/controllers/ResourceController.php (58)
+in /var/www/share/index.php (15)
+2014/02/09 19:27:27 [error] [php] file_put_contents(/var/www/share/attachments/201402/index.php): failed to open stream: Permission denied (/var/www/share/protected/controllers/ResourceController.php:61)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams()
+#1 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#2 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#3 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/index
+in /var/www/share/protected/controllers/ResourceController.php (61)
+in /var/www/share/index.php (15)
+2014/02/09 23:54:22 [error] [php] Undefined variable: result (/var/www/share/protected/controllers/ResourceController.php:184)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#1 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#2 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#3 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/search&key=cfaf&mobile=true
+in /var/www/share/protected/controllers/ResourceController.php (184)
+in /var/www/share/index.php (15)
+2014/02/10 21:13:39 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/10 21:15:23 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/10 21:16:33 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/10 21:17:05 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/10 21:25:48 [error] [php] Undefined variable: result (/var/www/share/protected/controllers/ResourceController.php:184)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#1 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#2 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#3 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/search&key=fdjsakf&mobile=true
+in /var/www/share/protected/controllers/ResourceController.php (184)
+in /var/www/share/index.php (15)
+2014/02/10 22:24:05 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/share/framework/web/CController.php:338
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(311): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#2 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /var/www/share/framework/web/CWebApplication.php(282): CController->run('download')
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/downlo...')
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/share/index.php?r=resource/download
+---
+2014/02/10 22:25:18 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/share/framework/web/CController.php:338
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(311): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#2 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /var/www/share/framework/web/CWebApplication.php(282): CController->run('download')
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/downlo...')
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/share/index.php?r=resource/download
+---
+2014/02/10 22:25:34 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in /var/www/share/framework/web/CController.php:338
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(311): CController->invalidActionParams(Object(CInlineAction))
+#1 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#2 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 /var/www/share/framework/web/CWebApplication.php(282): CController->run('download')
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/downlo...')
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CApplication->run()
+#7 {main}
+REQUEST_URI=/share/index.php?r=resource/download
+---
+2014/02/10 22:26:06 [error] [php] Use of undefined constant nill - assumed 'nill' (/var/www/share/protected/controllers/ResourceController.php:233)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#1 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#2 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#3 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/download&id=46
+in /var/www/share/protected/controllers/ResourceController.php (233)
+in /var/www/share/index.php (15)
+2014/02/10 22:26:22 [error] [php] Use of undefined constant NIL - assumed 'NIL' (/var/www/share/protected/controllers/ResourceController.php:233)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#1 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#2 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#3 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/download&id=46
+in /var/www/share/protected/controllers/ResourceController.php (233)
+in /var/www/share/index.php (15)
+2014/02/10 22:26:31 [error] [php] Use of undefined constant nill - assumed 'nill' (/var/www/share/protected/controllers/ResourceController.php:233)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#1 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#2 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#3 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/download&id=46
+in /var/www/share/protected/controllers/ResourceController.php (233)
+in /var/www/share/index.php (15)
