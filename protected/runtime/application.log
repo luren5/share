@@ -599,3 +599,240 @@ Stack trace:
 REQUEST_URI=/share/index.php?r=resource/download&id=46
 in /var/www/share/protected/controllers/ResourceController.php (233)
 in /var/www/share/index.php (15)
+2014/02/11 20:17:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/share/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(265): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=gii
+---
+2014/02/11 20:18:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/share/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(265): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=gii
+---
+2014/02/11 20:18:28 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/share/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(265): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=gii
+---
+2014/02/11 20:18:37 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not allowed to access this page.' in /var/www/share/framework/gii/GiiModule.php:170
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(265): GiiModule->beforeControllerAction(Object(DefaultController), Object(CInlineAction))
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/share/index.php?r=gii
+---
+2014/02/11 22:27:31 [error] [php] Undefined variable: description (/var/www/share/assets/template/reply_download.email.php:205)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams()
+#1 /var/www/share/framework/web/CController.php(288): ResourceController->runAction()
+#2 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#3 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#4 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/share/index.php?r=resource/download&id=46
+in /var/www/share/assets/template/reply_download.email.php (205)
+in /var/www/share/protected/controllers/ResourceController.php (243)
+in /var/www/share/index.php (15)
+2014/02/11 23:03:12 [error] [exception.CException] exception 'CException' with message 'Property "CWebApplication.mailer" is not defined.' in /var/www/share/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/share/framework/base/CModule.php(105): CComponent->__get('mailer')
+#1 /var/www/share/protected/controllers/ResourceController.php(263): CModule->__get('mailer')
+#2 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionDownload()
+#3 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#4 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#5 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/share/framework/web/CWebApplication.php(282): CController->run('download')
+#7 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/downlo...')
+#8 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /var/www/share/index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/share/index.php?r=resource/download&id=46&email=fuwahuanhuan1990@126.com
+---
+2014/02/11 23:19:18 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/11 23:19:26 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/11 23:20:14 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/27 21:09:43 [error] [exception.RedisException] exception 'RedisException' with message 'Redis server went away' in /var/www/share/protected/controllers/ResourceController.php:148
+Stack trace:
+#0 /var/www/share/protected/controllers/ResourceController.php(148): Redis->exists('resource_search...')
+#1 /var/www/share/framework/web/actions/CInlineAction.php(49): ResourceController->actionSearch()
+#2 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams(Array)
+#3 /var/www/share/framework/web/CController.php(288): CController->runAction(Object(CInlineAction))
+#4 /var/www/share/framework/web/CController.php(267): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/share/framework/web/CWebApplication.php(282): CController->run('search')
+#6 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('resource/search')
+#7 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /var/www/share/index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/share/index.php?r=resource/search&key=wocao&mobile=true
+---
+2014/02/27 21:59:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/share/framework/web/CController.php:485
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(272): CController->missingAction('index')
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('index')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/manager/i...')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/manager/index
+---
+2014/02/27 21:59:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "keyword".' in /var/www/share/framework/web/CController.php:485
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(272): CController->missingAction('keyword')
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('keyword')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/resource/...')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/resource/keyword
+HTTP_REFERER=http://share.com:8080/index.php?r=admin/index/left
+---
+2014/02/27 22:00:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "keyword".' in /var/www/share/framework/web/CController.php:485
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(272): CController->missingAction('keyword')
+#1 /var/www/share/framework/web/CWebApplication.php(282): CController->run('keyword')
+#2 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController('admin/resource/...')
+#3 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /var/www/share/index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=admin/resource/keyword
+HTTP_REFERER=http://share.com:8080/index.php?r=admin/index/left
+---
+2014/02/27 23:04:06 [error] [php] Undefined variable: keyword (/var/www/share/protected/modules/admin/controllers/ResourceController.php:51)
+Stack trace:
+#0 /var/www/share/framework/web/filters/CFilterChain.php(133): ResourceController->runAction()
+#1 /var/www/share/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/share/framework/web/CController.php(1147): CAccessControlFilter->filter()
+#3 /var/www/share/framework/web/filters/CInlineFilter.php(58): ResourceController->filterAccessControl()
+#4 /var/www/share/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/share/framework/web/CController.php(293): CFilterChain->run()
+#6 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#7 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#8 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/resource/keyword
+in /var/www/share/protected/modules/admin/controllers/ResourceController.php (51)
+in /var/www/share/index.php (15)
+2014/02/27 23:04:22 [error] [php] Undefined variable: key (/var/www/share/protected/modules/admin/controllers/ResourceController.php:52)
+Stack trace:
+#0 /var/www/share/framework/web/filters/CFilterChain.php(133): ResourceController->runAction()
+#1 /var/www/share/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/share/framework/web/CController.php(1147): CAccessControlFilter->filter()
+#3 /var/www/share/framework/web/filters/CInlineFilter.php(58): ResourceController->filterAccessControl()
+#4 /var/www/share/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/share/framework/web/CController.php(293): CFilterChain->run()
+#6 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#7 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#8 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/resource/keyword
+in /var/www/share/protected/modules/admin/controllers/ResourceController.php (52)
+in /var/www/share/index.php (15)
+2014/02/27 23:04:22 [error] [php] Undefined variable: key (/var/www/share/protected/modules/admin/controllers/ResourceController.php:52)
+Stack trace:
+#0 /var/www/share/framework/web/filters/CFilterChain.php(133): ResourceController->runAction()
+#1 /var/www/share/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/share/framework/web/CController.php(1147): CAccessControlFilter->filter()
+#3 /var/www/share/framework/web/filters/CInlineFilter.php(58): ResourceController->filterAccessControl()
+#4 /var/www/share/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/share/framework/web/CController.php(293): CFilterChain->run()
+#6 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#7 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#8 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/resource/keyword
+in /var/www/share/protected/modules/admin/controllers/ResourceController.php (52)
+in /var/www/share/index.php (15)
+2014/02/27 23:04:24 [error] [php] Undefined variable: key (/var/www/share/protected/modules/admin/controllers/ResourceController.php:52)
+Stack trace:
+#0 /var/www/share/framework/web/filters/CFilterChain.php(133): ResourceController->runAction()
+#1 /var/www/share/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#2 /var/www/share/framework/web/CController.php(1147): CAccessControlFilter->filter()
+#3 /var/www/share/framework/web/filters/CInlineFilter.php(58): ResourceController->filterAccessControl()
+#4 /var/www/share/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#5 /var/www/share/framework/web/CController.php(293): CFilterChain->run()
+#6 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#7 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#8 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/resource/keyword
+in /var/www/share/protected/modules/admin/controllers/ResourceController.php (52)
+in /var/www/share/index.php (15)
+2014/02/27 23:08:28 [error] [php] array_push() expects parameter 1 to be array, null given (/var/www/share/protected/modules/admin/controllers/ResourceController.php:57)
+Stack trace:
+#0 /var/www/share/framework/web/CController.php(310): CInlineAction->runWithParams()
+#1 /var/www/share/framework/web/filters/CFilterChain.php(133): ResourceController->runAction()
+#2 /var/www/share/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /var/www/share/framework/web/CController.php(1147): CAccessControlFilter->filter()
+#4 /var/www/share/framework/web/filters/CInlineFilter.php(58): ResourceController->filterAccessControl()
+#5 /var/www/share/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /var/www/share/framework/web/CController.php(293): CFilterChain->run()
+#7 /var/www/share/framework/web/CController.php(267): ResourceController->runActionWithFilters()
+#8 /var/www/share/framework/web/CWebApplication.php(282): ResourceController->run()
+#9 /var/www/share/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /var/www/share/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /var/www/share/index.php(15): CWebApplication->run()
+REQUEST_URI=/index.php?r=admin/resource/keyword
+in /var/www/share/protected/modules/admin/controllers/ResourceController.php (57)
+in /var/www/share/index.php (15)

@@ -227,19 +227,48 @@
         }
 
         public function actionDownload() {
-            $this->renderPartial('download');exit;
-            
-            
             if(!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-                return false;
+                echo json_encode(array('status' => 400, 'mes' => 'id error.'));
+                exit;
             }
+            if(empty($_GET['email'])) {
+                echo json_encode(array('status' => 401, 'mes' => 'invalid user email.'));
+                exit;
+            }
+            
             $system = isset($_GET['system']) ? $_GET['system'] : '';
             $id = (int)$_GET['id'];
             $resource = Resource::model()->findByPk($id);
-            print_r($resource); die();
+            $title = $resource->title;
+            $description = $resource->description;
+            $contributor = $resource->contributor;
+            $download_url = $resource->attachment ? ATT_DOWN_URL.$resource->attachment : $resource->remote_resource;
+            $create_time = $resource->create_time;
+            $detail_link = SITE_URL."index.php?r=resource/single&rid=$resource->id";
+            $feedback_url = "http://share.hgdonline.net/index.php?r=feedback/index";
+            $site_url = SITE_URL;
+            require_once ASSETS_DIR.'template/reply_download.email.php';
             
+            $mail = Yii::createComponent('application.extensions.mailer.EMailer');
+            $mail->IsSMTP();                                      // set mailer to use SMTP
+            $mail->Host = EMAIL_SMTP_HOST;  // specify main and backup server
+            $mail->SMTPAuth = true;     // turn on SMTP authentication
+            $mail->Username = EMAIL_FROM;  // SMTP username
+            $mail->Password = EMAIL_PASSWORD; // SMTP password
+            $mail->From = EMAIL_FROM;
+            $mail->FromName = EMAIL_FROM_NAME;
+            $mail->AddAddress($_GET['email'], "收件人");                 // name is optional
+            $mail->Subject = "来自湖工大分享网的回复";
+            $mail->Body = $email;
+            $mail->IsHTML(true);
+            $result = $mail->Send();
+            if($result) {
+                echo json_encode(array('status' => 200, 'mes' => 'seccuss'));
+                exit;
+            } else {
+                echo json_encode(array('status' => 402, 'mes' => 'send email error.'));
+            }
         }
-
 
         public function actionError()
         {

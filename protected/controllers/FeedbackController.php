@@ -35,4 +35,35 @@
             }
             $this->render('index', array('errors' => $this->errors));
         }
+        
+        public function actionMobile() {
+            if(empty($_GET['system'])) {
+                echo json_encode(array('status' => 401, 'mes' => 'empty system'));
+                exit;
+            }
+            
+            if(empty($_GET['feedbackContent'])) {
+                echo json_encode(array('status' => 402, 'mes' => 'feedback content empty'));
+                exit;
+            }
+            
+            if(empty($_GET['userEmail'])) {
+                echo json_encode(array('status' => 403, 'mes' => 'user email empty'));
+                exit;
+            }
+            
+            $model = new FeedbackMobile;
+            $model->user_email = $_GET['userEmail'];
+            $model->feedback_content = $_GET['feedbackContent'];
+            $model->system = $_GET['system'];
+            $model->create_time = date("Y-m-d H:i:s");
+            $model->validate();
+            if($model->save()) {
+                echo json_encode(array('status' => 200));
+                exit;
+            } else {
+                echo json_encode(array('status' => 404, 'mes' => 'save data error'));
+                exit;
+            }
+        }
     }

@@ -1,6 +1,6 @@
-<?php
-
-?>
+<?php 
+$email = <<<EOD
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title></title>
@@ -193,37 +193,35 @@
 					<tr>
 						<td style="color: #fff; font-family: Helvetica, Arial, sans-serif;">
 							<h1>$title</h1>
-							<p>$contributor分享于$create_time</p>
-						</td>
-					</tr>
-				</table>
-				<table id="Helpful" cellspacing="0" cellpadding="0" style="color: #bdbcbc; background: #fff;">
-					<tr>
-						<td style="font-family: Helvetica, Arial, sans-serif;">
-							<p>You are receiving this email because the email address [email] was subscribed to our email list. Having trouble reading this email? View it on our <a href="#">website</a>.</p>
 						</td>
 					</tr>
 				</table>
 				<table id="Content" cellspacing="0" cellpadding="10" width="505" style="color: #666; background-color: #fff;">
 					<tr valign="top">
 						<td id="Primary" style="font-family: Helvetica, Arial, sans-serif;">
-							<h2>资源描述</h2>
-                                                        <p>这是资源的一些描述！</p>
+							<h2>资源详情</h2>
+                                                        <p>资源描述：$description</p>
+                                                        <p>下载链接：<br/><a href="$download_url" target="_blank">$download_url</a></p>
+                                                        <p>分享人：$contributor</p>
+                                                        <p>分享时间：$create_time</p>
+                                                        <p>查看更多关于本资源的评论，请戳<a href="$detail_link" target="_blank">这里！</a></p>
 						</td>
 					</tr>
 				</table>
-                                <table id="Content" cellspacing="0" cellpadding="10" width="505" style="color: #666; background-color: #fff;">
-					<tr valign="top">
-						<td id="Primary" style="font-family: Helvetica, Arial, sans-serif;">
-							<h2>下载链接</h2>
-                                                        <p>http://www.baidu.com</p>
+                                <table  cellspacing="0" cellpadding="0" style="color:black; background: #fff;">
+					<tr>
+						<td style="font-family: Helvetica, Arial, sans-serif;">
+                                                    <p>&nbsp;&nbsp;感谢您使用<a target="_blank" href="$site_url" >湖工大爱分享网</a>的资源下载功能!
+                                                        <br/></br>
+                                                        &nbsp;&nbsp;如果有什么宝贵的意见，欢迎戳<a target="_blank" href="$feedback_url">这里</a>告诉我们，谢谢！.
+                                                    </p>
 						</td>
 					</tr>
 				</table>
 				<table id="Legal" cellspacing="0" cellpadding="15" width="505" style="color: #7d822b; background-color: #d3dd2e;">
 					<tr>
 						<td style="color: #7d822b; font-family: Helvetica, Arial, sans-serif;">
-							<p>&#169; 湖工大爱分享网</p>
+							<p>&#169;湖工大爱分享网.</p>
 						</td>
 					</tr>
 				</table>
@@ -233,3 +231,5 @@
 </div>
 </body>
 </html>
+EOD;
+?>

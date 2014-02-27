@@ -20,7 +20,7 @@ return array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'xhuan',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+			'ipFilters'=>array('127.0.0.1','::1', '192.168.1.15'),
 		),
         
         //后台管理模块创建成功后，一定要在这里引入才可以生效

@@ -54,6 +54,7 @@
             <ul>
             <li><a href="<?php echo $this->createUrl('resource/index') ?>" target ="right">资源列表</a></li>
             <li><a href="<?php echo $this->createUrl('comment/index') ?>" target ="right">资源评论管理</a></li>
+            <li><a href="<?php echo $this->createUrl('resource/keyword') ?>" target ="right">搜索关键词管理</a></li>
           </ul>
         </li>
         <li> 
